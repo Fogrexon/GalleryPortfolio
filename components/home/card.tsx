@@ -19,13 +19,15 @@ Card.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.element,
-  ]).isRequired,
+    PropTypes.arrayOf(PropTypes.element),
+  ]),
   link: PropTypes.string.isRequired,
   style: Style,
 };
 
 Card.defaultProps = {
   style: {},
+  children: '',
 };
 
 export default Card;
