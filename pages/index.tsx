@@ -1,8 +1,16 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
 
-export default function Home() {
+const Home = () => {
   return (
-    <h1>Hello world</h1>
-  )
+    <>
+      <Head>
+        <title>Fogrex Portfolio</title>
+      </Head>
+      <div>
+        
+      </div>
+    </>
+  );
 }
+
+export default Home;
