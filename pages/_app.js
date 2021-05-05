@@ -1,4 +1,4 @@
-import '../styles/style.scss';
+import '../styles/global.scss';
 
 const MyApp = ({ Component, pageProps }) => <Component {...pageProps} />;
 
