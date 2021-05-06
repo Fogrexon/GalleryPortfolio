@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import PropTypes from 'prop-types';
 import { Style } from 'react-style-proptype';
 import style from './card.module.scss';
@@ -9,7 +10,7 @@ const Card = ({
     <section>
       <h1>{title}</h1>
       {children}
-      <div><a href={link}>Learn more</a></div>
+      <div><Link href={link}>Learn more</Link></div>
     </section>
   </div>
 );
