@@ -4,31 +4,30 @@ import { Style } from 'react-style-proptype';
 import style from './card.module.scss';
 
 const Card = ({
-  title, children, link, style: styleObj,
+  title, link, upArrow, downArrow, style: styleObj,
 }) => (
   <div className={style.card} style={styleObj}>
     <section>
-      <h1>{title}</h1>
-      {children}
-      <div><Link href={link}>Learn more</Link></div>
+      { upArrow ? <div>SCROLL</div> : '' }
+      <h1>{link ? <Link href={link}>{title}</Link> : title}</h1>
+      { downArrow ? <div>SCROLL</div> : '' }
     </section>
   </div>
 );
 
 Card.propTypes = {
   title: PropTypes.string.isRequired,
-  children: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.element,
-    PropTypes.arrayOf(PropTypes.element),
-  ]),
-  link: PropTypes.string.isRequired,
+  link: PropTypes.string,
+  upArrow: PropTypes.bool,
+  downArrow: PropTypes.bool,
   style: Style,
 };
 
 Card.defaultProps = {
   style: {},
-  children: '',
+  link: null,
+  upArrow: false,
+  downArrow: false,
 };
 
 export default Card;
