@@ -1,3 +1,4 @@
+import { IoLogoTwitter } from 'react-icons/fa';
 import Inner from '../components/utils/inner';
 import Section from '../components/about/section';
 
@@ -7,16 +8,16 @@ const About = () => (
       Fogrex
     </Section>
     <Section title="Info">
-      This is section
+      大学3年 情報系
     </Section>
     <Section title="Language">
-      This is section
+      JS, UnityC#, GLSL, Python, Java etc...
     </Section>
     <Section title="Interest">
-      This is section
+      WebGL, Computer Graphics
     </Section>
     <Section title="Contact">
-      This is section
+      <IoLogoTwitter />
     </Section>
   </Inner>
 );
