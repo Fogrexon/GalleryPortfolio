@@ -1,0 +1,50 @@
+[
+  {
+    "name": "OhokayamaAdventure",
+    "tags": ["JavaScript"],
+    "link": "http://ohokayamaadventure.fogrex.trap.show/",
+    "sourcecode": "https://github.com/Fogrexon/HackathonTextAdventure",
+    "image": "/gallery/ohokayama.jpg",
+    "description": "ハッカソンで制作された。JSで作られているテキストで進むアドベンチャーゲーム。プログラム担当"
+  },
+  {
+    "name": "カップル破壊ゲーム-あいを破壊せよ-",
+    "tags": ["UnityC#", "VR"],
+    "link": "https://trap.jp/post/741/",
+    "sourcecode": "",
+    "image": "/gallery/coupledestroy.png",
+    "description": "カップルを破壊するゲーム。サークル内でのハッカソンで制作。5人チーム。公開はしていないが、VR版がある。"
+  },
+  {
+    "name": "JankenSimulator",
+    "tags": ["UnityC#", "3D"],
+    "link": "http://hackathon20_winter_09.hackathon20_winter_09.trap.show/",
+    "sourcecode": "",
+    "image": "/gallery/jankensimulator.png",
+    "description": "HandSimulatorのオマージュ。マウスで前後移動。ホイールで上下移動。sが小指と薬指。E,Dが中指の第二関節と第三関節。RFが人差し指の第二関節と第三関節、Spaceが親指。難解なキー操作でたたいて被ってじゃんけんポンをするゲーム。ハッカソンで急ピッチで制作したのでHelpボタンが作られていない。自分はプログラム担当"
+  },
+  {
+    "name": "CGEngine",
+    "tags": ["WebGL", "TypeScript", "GLSL", "PBR"],
+    "link": "",
+    "sourcecode": "https://github.com/titech-cpp/CGEngine",
+    "image": "/gallery/CGEngine.jpg",
+    "description": "HandSimulatorのオマージュ。マウスで前後移動。ホイールで上下移動。sが小指と薬指。E,Dが中指の第二関節と第三関節。RFが人差し指の第二関節と第三関節、Spaceが親指。難解なキー操作でたたいて被ってじゃんけんポンをするゲーム。ハッカソンで急ピッチで制作したのでHelpボタンが作られていない。自分はプログラム担当"
+  },
+  {
+    "name": "Newstater",
+    "tags": ["React", "Firebase"],
+    "link": "https://news-6c0c6.web.app/",
+    "sourcecode": "https://github.com/yf1121/summer_hackathon_team1",
+    "image": "/gallery/newstater.jpg",
+    "description": "サマーハッカソンに参加して作った作品。共同制作者: yf1121。ニュースや新聞に特化したSNS。ニュースを聞いて、考えたことを思うままに書いてみよう。"
+  },
+  {
+    "name": "NEWTON",
+    "tags": ["UnityC#", "2D"],
+    "link": "/newton/index.html",
+    "sourcecode": "",
+    "image": "/gallery/newton.jpg",
+    "description": "サマーハッカソンに参加して作った作品。重力を操って弾を当てたり惑星同士を当てたりして点数を稼ぐゲーム。バックエンドチームが居てランキング機能がついていたが、現在は停止中。"
+  },
+]

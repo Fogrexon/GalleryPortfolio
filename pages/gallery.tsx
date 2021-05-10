@@ -1,7 +1,5 @@
-const About = () => (
-  <div>
-    
-  </div>
+const Gallery = () => (
+  
 );
 
-export default About;
+export default Gallery;
