@@ -46,5 +46,13 @@
     "sourcecode": "",
     "image": "/gallery/newton.jpg",
     "description": "サマーハッカソンに参加して作った作品。重力を操って弾を当てたり惑星同士を当てたりして点数を稼ぐゲーム。バックエンドチームが居てランキング機能がついていたが、現在は停止中。"
+  },
+  {
+    "name": "CPCTF Visualizer 2021",
+    "tags": ["UnityC#", "3D"],
+    "link": "/newton/index.html",
+    "sourcecode": "",
+    "image": "/gallery/newton.jpg",
+    "description": "部内で開かれたCPCTFのスコアを視覚的に表示するためのビジュアライザ。UnityのWebGLビルドで作られた。3人で制作。自分は木やポストエフェクトなどを担当。"
   }
 ]
