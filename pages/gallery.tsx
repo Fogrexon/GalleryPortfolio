@@ -1,7 +1,10 @@
 import GalleryWrapper from '../components/gallery/galleryitem';
+import Inner from '../components/utils/inner';
 
 const Gallery = () => (
-  <GalleryWrapper />
+  <Inner>
+    <GalleryWrapper />
+  </Inner>
 );
 
 export default Gallery;
