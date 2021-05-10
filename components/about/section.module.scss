@@ -15,10 +15,24 @@
     }
   }
   .icon_wrapper {
-    
-    vertical-align: middle;
+    * {
+      margin: 0px 10px;
+    }
+    svg {
+      vertical-align: middle;
+    }
     .icon {
       font-size: 50px;
+    }
+    .link {
+      display:inline-block;
+      border: solid black 1px;
+      border-radius: 3px;
+      padding: 3px;
+      font-size: 30px;
+      &::after {
+        content: '→';
+      }
     }
   }
 }

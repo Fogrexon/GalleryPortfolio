@@ -22,7 +22,9 @@ const About = () => (
       <div className={style.icon_wrapper}>
         <a className={style.icon} href="https://twitter.com/Faglexon"><FaTwitter /></a>
         <a className={style.icon} href="https://github.com/Fogrexon"><FaGithub /></a>
-        <a href="hhttps://www.shadertoy.com/user/Fogrex">Shadertoy</a>
+        <a className={style.link} href="https://www.shadertoy.com/user/Fogrex">Shadertoy</a>
+        <a className={style.link} href="https://qiita.com/FogRexOn">Qiita</a>
+        <a className={style.link} href="https://trap.jp/author/fogrex/">traP</a>
       </div>
     </Section>
   </Inner>
