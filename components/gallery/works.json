@@ -29,7 +29,7 @@
     "link": "",
     "sourcecode": "https://github.com/titech-cpp/CGEngine",
     "image": "/gallery/CGEngine.jpg",
-    "description": "HandSimulatorのオマージュ。マウスで前後移動。ホイールで上下移動。sが小指と薬指。E,Dが中指の第二関節と第三関節。RFが人差し指の第二関節と第三関節、Spaceが親指。難解なキー操作でたたいて被ってじゃんけんポンをするゲーム。ハッカソンで急ピッチで制作したのでHelpボタンが作られていない。自分はプログラム担当"
+    "description": "授業の自由課題で作ったライブラリ。WebGLのラッパー。基本的なレンダリングから物理ベースレンダリングまで1から実装したもの。"
   },
   {
     "name": "Newstater",
@@ -46,5 +46,5 @@
     "sourcecode": "",
     "image": "/gallery/newton.jpg",
     "description": "サマーハッカソンに参加して作った作品。重力を操って弾を当てたり惑星同士を当てたりして点数を稼ぐゲーム。バックエンドチームが居てランキング機能がついていたが、現在は停止中。"
-  },
+  }
 ]

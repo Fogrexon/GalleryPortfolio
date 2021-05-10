@@ -1,6 +1,8 @@
+/* eslint-disable jsx-a11y/control-has-associated-label */
 import { FaTwitter, FaGithub } from 'react-icons/fa';
 import Inner from '../components/utils/inner';
 import Section from '../components/about/section';
+import style from '../components/about/section.module.scss';
 
 const About = () => (
   <Inner>
@@ -16,10 +18,11 @@ const About = () => (
     <Section title="Interest">
       WebGL, Computer Graphics
     </Section>
-    <Section title="Accounts">
-      <div>
-        <a href="https://twitter.com/Faglexon"><FaTwitter /></a>
-        <a href="https://github.com/Fogrexon"><FaGithub /></a>
+    <Section title="Links">
+      <div className={style.icon_wrapper}>
+        <a className={style.icon} href="https://twitter.com/Faglexon"><FaTwitter /></a>
+        <a className={style.icon} href="https://github.com/Fogrexon"><FaGithub /></a>
+        <a href="hhttps://www.shadertoy.com/user/Fogrex">Shadertoy</a>
       </div>
     </Section>
   </Inner>

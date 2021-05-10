@@ -14,7 +14,11 @@
       border: 1px black solid;
     }
   }
-  a {
-    font-size: 50px;
+  .icon_wrapper {
+    
+    vertical-align: middle;
+    .icon {
+      font-size: 50px;
+    }
   }
 }
