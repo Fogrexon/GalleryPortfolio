@@ -20,7 +20,55 @@ module.exports = {
     '@typescript-eslint',
   ],
   rules: {
-    'react/jsx-filename-extension': [1, { extensions: ['.jsx', '.tsx'] }],
+    'no-use-before-define': 'off',
+    '@typescript-eslint/no-use-before-define': ['error'],
+    // should be rewritten as `['error', { allowAsStatement: true }]` in ESLint 7 or later
+    // SEE: https://github.com/typescript-eslint/typescript-eslint/issues/1184
+    'no-void': ['error', { allowAsStatement: true }],
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      {
+        vars: 'all',
+        args: 'after-used',
+        argsIgnorePattern: '_',
+        ignoreRestSiblings: false,
+        varsIgnorePattern: '_',
+      },
+    ],
+    // 'import/extensions': [
+    //   'error',
+    //   'ignorePackages',
+    //   {
+    //     js: 'never',
+    //     jsx: 'never',
+    //     ts: 'never',
+    //     tsx: 'never',
+    //   },
+    // ],
+    'react/jsx-filename-extension': [
+      'error',
+      {
+        extensions: ['.jsx', '.tsx'],
+      },
+    ],
     'react/react-in-jsx-scope': 'off',
+    // temporary
+    'import/extensions': 'off',
+    'import/no-unresolved': 'off',
+  },
+  overrides: [
+    {
+      files: ['*.tsx'],
+      rules: {
+        'react/prop-types': 'off',
+      },
+    },
+  ],
+  settings: {
+    'import/resolver': {
+      node: {
+        paths: ['src'],
+      },
+    },
   },
 };
