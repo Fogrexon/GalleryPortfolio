@@ -35,8 +35,8 @@ const Home = () => {
       <div id="cardholder">
         <Card title="WelcomeToFogrexSite" downArrow style={{ backgroundColor: '#55a' }} />
         <Card title="About" link="/about" upArrow downArrow style={{ backgroundColor: '#5a5' }} />
-        <Card title="Gallery" link="/gallery" upArrow downArrow style={{ backgroundColor: '#a55' }} />
-        <Card title="Blog" link="/blog" upArrow style={{ backgroundColor: '#aaa' }} />
+        <Card title="Gallery" link="/gallery" upArrow style={{ backgroundColor: '#a55' }} />
+        {/* <Card title="Blog" link="/blog" upArrow style={{ backgroundColor: '#aaa' }} /> */}
       </div>
     </>
   );

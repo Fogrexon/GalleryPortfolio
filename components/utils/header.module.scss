@@ -1,19 +1,35 @@
+@import '../../styles/style.scss';
+
 .header {
   height: 64px;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  ul {
-    position: absolute;
-    right: 0px;
-    list-style: none;
-    li {
-      display: inline-block;
-      margin: 10px;
+  div {
+    @include inner;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    ul {
+      position: absolute;
+      right: 0px;
+      list-style: none;
+      padding: 0px;
+      li {
+        display: inline-block;
+        margin: 10px;
+      }
+    }
+    svg {
+      height: 50px;
     }
   }
-  svg {
-    height: 50px;
+  @include sp {
+    height: inherit;
+    div {
+      ul {
+        position: static;
+      }
+    }
   }
 }
