@@ -8,6 +8,11 @@ const Header = ({ title }) => (
       <title>{title}</title>
     </Head>
     <header className={style.header}>
+      <a href="/">
+        <svg height="100" width="100">
+          <polygon points="50,0 100,86.6 0,86.6" />
+        </svg>
+      </a>
       <ul>
         <li>
           <a href="/about">About</a>

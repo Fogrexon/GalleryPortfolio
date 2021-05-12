@@ -1,5 +1,20 @@
 .header {
   height: 64px;
   width: 100%;
-  border: 1px black solid;
+  border-bottom: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  ul {
+    position: absolute;
+    right: 0px;
+    list-style: none;
+    li {
+      display: inline-block;
+      margin: 10px;
+    }
+  }
+  svg {
+    height: 50px;
+  }
 }
