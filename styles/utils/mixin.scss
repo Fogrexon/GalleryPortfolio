@@ -1,0 +1,12 @@
+@mixin inner {
+  width: 90%;
+  max-width: $content-width;
+  margin: 0 auto;
+  @content;
+}
+
+@mixin sp($max-width: $sp-width) {
+  @media only screen and(max-width: $max-width) {
+    @content;
+  }
+}

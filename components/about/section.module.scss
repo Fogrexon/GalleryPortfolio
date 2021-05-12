@@ -1,0 +1,38 @@
+.section {
+  width: 100%;
+  text-align: center;
+  h1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    &::before, &::after {
+      margin: 10px;
+      display: block;
+      flex-grow: 1;
+      content: '';
+      height: 0px;
+      border: 1px black solid;
+    }
+  }
+  .icon_wrapper {
+    * {
+      margin: 0px 10px;
+    }
+    svg {
+      vertical-align: middle;
+    }
+    .icon {
+      font-size: 50px;
+    }
+    .link {
+      display:inline-block;
+      border: solid black 1px;
+      border-radius: 3px;
+      padding: 3px;
+      font-size: 30px;
+      &::after {
+        content: '→';
+      }
+    }
+  }
+}
