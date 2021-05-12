@@ -14,7 +14,7 @@ export const GalleryItem = ({
   },
 }) => {
   const imgSrc = image || '/gallery/noimage.png';
-  const ref = useRef<HTMLElement>();
+  const ref = useRef<HTMLDivElement>();
   const [boxStyle, setBoxStyle] = useState<{[key: string]: string}>({ backgroundImage: `url(${imgSrc})` });
   const clickWork = () => {
     ref.current.classList.add(style.visible);
