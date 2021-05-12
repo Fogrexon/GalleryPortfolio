@@ -2,4 +2,5 @@
 
 .inner {
   @include inner;
+  overflow: hidden;
 }

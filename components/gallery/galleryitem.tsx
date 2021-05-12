@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import style from './galleryitem.module.scss';
 import works from './works.json';
@@ -12,7 +12,9 @@ export const GalleryItem = ({
     name, tags, link, sourcecode, image, description,
   },
 }) => {
+  const imgSrc = image || '/gallery/noimage.png';
   const ref = useRef<HTMLElement>();
+  const [boxStyle, setBoxStyle] = useState<{[key: string]: string}>({ backgroundImage: `url(${imgSrc})` });
   const clickWork = () => {
     ref.current.classList.add(style.visible);
   };
@@ -20,10 +22,27 @@ export const GalleryItem = ({
     e.stopPropagation();
     ref.current.classList.remove(style.visible);
   };
-  const imgSrc = image || '/gallery/noimage.png';
+
+  const mouseMove = (e) => {
+    const rect = e.target.getBoundingClientRect();
+    const boxX = (e.clientX - rect.left) / rect.width - 0.5;
+    const boxY = (e.clientY - rect.top) / rect.height - 0.5;
+    setBoxStyle({
+      backgroundImage: `url(${imgSrc})`,
+      transform: `perspective(500px) rotateX(${-Math.floor(boxY * 30 * 10) / 10}deg) rotateY(${Math.floor(boxX * 30 * 10) / 10}deg)`,
+      zIndex: '1',
+    });
+  };
+  const mouseLeave = () => {
+    setBoxStyle({
+      backgroundImage: `url(${imgSrc})`,
+      transform: 'perspective(500px) rotateX(0deg) rotateY(0deg)',
+      zIndex: '0',
+    });
+  };
   const wrap = (
-    <div className={style.work} style={{ backgroundImage: `url(${imgSrc})` }} ref={ref} onClick={clickWork}>
-      <div className={style.background} onClick={removeWork}>
+    <>
+      <div className={style.background} ref={ref} onClick={removeWork}>
         <div className={style.details}>
           <img src={imgSrc} alt={name} />
           <h2>{name}</h2>
@@ -38,10 +57,12 @@ export const GalleryItem = ({
           <p>{description}</p>
         </div>
       </div>
-      <div className={style.name}>
-        {name}
+      <div className={style.work} style={boxStyle} onClick={clickWork} onMouseMove={mouseMove} onMouseLeave={mouseLeave}>
+        <div className={style.name}>
+          {name}
+        </div>
       </div>
-    </div>
+    </>
   );
   return wrap;
 };
