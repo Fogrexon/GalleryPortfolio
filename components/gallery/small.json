@@ -2,33 +2,33 @@
   {
     "name": "EggLikeMan",
     "tags": ["GLSL", "Shadertoy"],
-    "link": "https://www.shadertoy.com/view/tljXDd",
-    "sourcecode": null,
+    "link": "https://trap.jp/post/766/",
+    "sourcecode": "https://www.shadertoy.com/view/tljXDd",
     "image": "/gallery/egglikeman.png",
     "description": "ブログ用に作った謎オブジェクト。レイマーチングの練習。"
   },
   {
     "name": "FXAA",
     "tags": ["GLSL", "Shadertoy"],
-    "link": "https://www.shadertoy.com/view/WsKXWD",
-    "sourcecode": null,
-    "image": "/gallery/egglikeman.png",
+    "link": null,
+    "sourcecode": "https://www.shadertoy.com/view/WsKXWD",
+    "image": "/gallery/FXAA.png",
     "description": "授業の自由課題で論文を読んで実装したもの。このほかにSSAA、TAAについても実装した。"
   },
   {
     "name": "4DCube",
     "tags": ["GLSL", "Shadertoy"],
-    "link": "https://www.shadertoy.com/view/Wd3cRM",
-    "sourcecode": null,
-    "image": "/gallery/egglikeman.png",
-    "description": "4次元立方体の描画をレイマーチングを使って行ったもの。"
+    "link": "https://trap.jp/post/1127/",
+    "sourcecode": "https://www.shadertoy.com/view/Wd3cRM",
+    "image": "/gallery/4dcube.jpg",
+    "description": "ブログ用。4次元立方体の描画をレイマーチングを使って行ったもの。"
   },
   {
     "name": "VR版カップル破壊ゲーム",
     "tags": ["UnityC#", "VR"],
     "sourcecode": null,
     "link": "https://docs.google.com/presentation/d/16b5JAGDS8QzY5gcEZ0qaIYKfeyAn8jyGUNuoq4sCTB8/edit?usp=sharing",
-    "image": null,
+    "image": "/gallery/coupledestroyvr.jpg",
     "description": "VRゲーム版のカップル破壊ゲーム。アプリケーションは公開せず、発表資料のみ。"
   },
   {

@@ -12,13 +12,13 @@ export const GalleryItem = ({
     name, tags, link, sourcecode, image, description,
   },
 }) => {
-  const ref = useRef();
+  const ref = useRef<HTMLElement>();
   const clickWork = () => {
-    ref.current?.classList.add(style.visible);
+    ref.current.classList.add(style.visible);
   };
   const removeWork = (e) => {
     e.stopPropagation();
-    ref.current?.classList.remove(style.visible);
+    ref.current.classList.remove(style.visible);
   };
   const imgSrc = image || '/gallery/noimage.png';
   const wrap = (
@@ -32,8 +32,8 @@ export const GalleryItem = ({
             {tags.map((entry: string) => <span className={style.tags}>{entry}</span>)}
           </div>
           <div className={style.link_wrapper}>
-            {link ? <span><a href={link}>Link</a></span> : ''}
-            {sourcecode ? <span><a href={sourcecode}>Sourcecode</a></span> : ''}
+            {link ? <span><a href={link} target="_blank" rel="noopener noreferrer">Link</a></span> : ''}
+            {sourcecode ? <span><a href={sourcecode} target="_blank" rel="noopener noreferrer">Sourcecode</a></span> : ''}
           </div>
           <p>{description}</p>
         </div>
