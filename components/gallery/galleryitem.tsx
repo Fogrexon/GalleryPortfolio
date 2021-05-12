@@ -2,6 +2,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
+import SectionTitle from '../utils/section';
 import style from './galleryitem.module.scss';
 import works from './works.json';
 import joins from './joins.json';
@@ -57,7 +58,13 @@ export const GalleryItem = ({
           <p>{description}</p>
         </div>
       </div>
-      <div className={style.work} style={boxStyle} onClick={clickWork} onMouseMove={mouseMove} onMouseLeave={mouseLeave}>
+      <div
+        className={style.work}
+        style={boxStyle}
+        onClick={clickWork}
+        onMouseMove={mouseMove}
+        onMouseLeave={mouseLeave}
+      >
         <div className={style.name}>
           {name}
         </div>
@@ -80,20 +87,20 @@ GalleryItem.propTypes = {
 
 const GalleryWrapper = () => (
   <>
-    <h1 className={style.section_title}>作品集</h1>
+    <SectionTitle>作品集</SectionTitle>
     <div className={style.wrapper}>
       {
       works.map((entry) => <GalleryItem item={entry} key={entry.name} />)
     }
     </div>
-    <h1 className={style.section_title}>現在参加中のプロジェクト</h1>
+    <SectionTitle>参加中のプロジェクト</SectionTitle>
     <div className={style.wrapper}>
       {
         joins.map((entry) => <GalleryItem item={entry} key={entry.name} />)
       }
     </div>
 
-    <h1 className={style.section_title}>小物</h1>
+    <SectionTitle>小物</SectionTitle>
     <p className={style.section_description}>授業課題とかで作った作品未満のプログラム</p>
     <div className={style.wrapper}>
       {

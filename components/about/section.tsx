@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
 import style from './section.module.scss';
+import SectionTitle from '../utils/section';
 
 const Section = ({ title, children }) => (
   <div className={style.section}>
-    <h1>{title}</h1>
+    <SectionTitle>{title}</SectionTitle>
     {children}
   </div>
 );

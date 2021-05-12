@@ -1,20 +1,5 @@
 @import '../../styles/style.scss';
 
-.section_title {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin: 50px 0px;
-  &::before, &::after {
-    margin: 10px;
-    display: block;
-    flex-grow: 1;
-    content: '';
-    height: 0px;
-    border: 1px black solid;
-  }
-}
-
 .section_description {
   text-align: center;
 }

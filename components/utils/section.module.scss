@@ -1,0 +1,52 @@
+@keyframes section-title-anim{
+  0% {
+    transform: scale(1.00);
+  }
+  // 10% {
+  //   transform: scale(1.30);
+  // }
+  // 20% {
+  //   transform: scale(1.43);
+  // }
+  30% {
+    transform: scale(1.50);
+  }
+  // 40% {
+  //   transform: scale(1.43);
+  // }
+  // 50% {
+  //   transform: scale(1.30);
+  // }
+  60% {
+    transform: scale(1.00);
+  }
+  70% {
+    transform: scale(1.00);
+  }
+  80% {
+    transform: scale(1.00);
+  }
+}
+
+.section_word {
+  display: inline-block;
+  animation-name: section-title-anim;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.section_title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 50px 0px;
+  &::before, &::after {
+    margin: 10px;
+    display: block;
+    flex-grow: 1;
+    content: '';
+    height: 0px;
+    border: 1px black solid;
+  }
+}
