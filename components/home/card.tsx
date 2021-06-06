@@ -2,15 +2,16 @@ import Link from 'next/link';
 import PropTypes from 'prop-types';
 import { Style } from 'react-style-proptype';
 import style from './card.module.scss';
+import { FaAngleUp, FaAngleDown } from 'react-icons/fa';
 
 const Card = ({
   title, link, upArrow, downArrow, style: styleObj,
 }) => (
   <div className={style.card} style={styleObj}>
     <section>
-      { upArrow ? <div>SCROLL</div> : '' }
+      { upArrow ? <div><FaAngleUp /></div> : '' }
       <h1>{link ? <Link href={link}>{title}</Link> : title}</h1>
-      { downArrow ? <div>SCROLL</div> : '' }
+      { downArrow ? <div><FaAngleDown /></div> : '' }
     </section>
   </div>
 );
@@ -20,7 +21,7 @@ Card.propTypes = {
   link: PropTypes.string,
   upArrow: PropTypes.bool,
   downArrow: PropTypes.bool,
-  style: Style,
+  styleObj: PropTypes.object,
 };
 
 Card.defaultProps = {

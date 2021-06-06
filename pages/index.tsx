@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { useEffect } from 'react';
 import Card from '../components/home/card';
+import Background from '../components/home/background';
 
 const scrollEventHandler = (entries: IntersectionObserverEntry[]) => {
   entries.forEach((entry) => {
@@ -32,10 +33,11 @@ const Home = () => {
       <Head>
         <title>Fogrex Portfolio</title>
       </Head>
+      <Background />
       <div id="cardholder">
-        <Card title="WelcomeToFogrexSite" downArrow style={{ backgroundColor: '#55a' }} />
-        <Card title="About" link="/about" upArrow downArrow style={{ backgroundColor: '#5a5' }} />
-        <Card title="Gallery" link="/gallery" upArrow style={{ backgroundColor: '#a55' }} />
+        <Card title="WelcomeToFogrexSite" downArrow />
+        <Card title="About" link="/about" upArrow downArrow />
+        <Card title="Gallery" link="/gallery" upArrow />
         {/* <Card title="Blog" link="/blog" upArrow style={{ backgroundColor: '#aaa' }} /> */}
       </div>
     </>
