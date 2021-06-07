@@ -30,7 +30,7 @@ export const GalleryItem = ({
     const boxY = (e.clientY - rect.top) / rect.height - 0.5;
     setBoxStyle({
       backgroundImage: `url(${imgSrc})`,
-      transform: `perspective(500px) rotateX(${-Math.floor(boxY * 30 * 10) / 10}deg) rotateY(${Math.floor(boxX * 30 * 10) / 10}deg)`,
+      transform: `perspective(500px) rotateX(${-Math.floor(boxY * 10 * 10) / 10}deg) rotateY(${Math.floor(boxX * 10 * 10) / 10}deg)`,
       zIndex: '1',
     });
   };

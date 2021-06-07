@@ -38,5 +38,21 @@
     "link": null,
     "image": null,
     "description": "人工知能の授業で作った単純パーセプトロンとニューラルネットワークのプログラム。"
+  },
+  {
+    "name": "InfectionSimulator",
+    "tags": ["javascript"],
+    "sourcecode": "https://github.com/Fogrexon/InfectionSimulator",
+    "link": "https://fogrexon.github.io/InfectionSimulator/",
+    "image": "/gallery/infectionsimulator.png",
+    "description": "課題でSIRモデルについて調べた時に作ったシミュレーション"
+  },
+  {
+    "name": "顔認識で推す",
+    "tags": ["Python", "顔認識", "機械学習"],
+    "sourcecode": "https://colab.research.google.com/drive/1rmwt9tcYXeD7WBOIKu5vBmXEv3JQ_WMR",
+    "link": "https://trap.jp/post/864/",
+    "image": "/gallery/kaoninshiki.png",
+    "description": "しゅがはが好きすぎて顔認識させたやつ"
   }
 ]
