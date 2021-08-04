@@ -10,6 +10,7 @@
     "lint:fix": "eslint --fix 'pages/**/*.{js,jsx,ts,tsx}' 'components/**/*.{js,jsx,ts,tsx}'"
   },
   "dependencies": {
+    "@react-three/drei": "^7.3.1",
     "@react-three/fiber": "^6.0.20",
     "next": "10.x",
     "prop-types": "^15.7.2",
