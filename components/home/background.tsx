@@ -1,25 +1,20 @@
-import { useRef, useState, useEffect } from 'react';
-import { Canvas } from '@react-three/fiber';
-import { Effects } from '@react-three/drei';
-import { EffectComposer, DepthOfField, Bloom, Noise, Vignette } from '@react-three/postprocessing';
-// import PostProcessing from './PostProcessing/effect';
+/* eslint-disable react/jsx-props-no-spreading */
+import { useState, useEffect, useRef } from 'react';
+import { Canvas, useThree, useFrame } from '@react-three/fiber';
+import { PerspectiveCamera } from '@react-three/drei';
+import {
+  EffectComposer, DepthOfField, Bloom, Noise, Vignette,
+} from '@react-three/postprocessing';
+import { Mesh } from 'three';
+import { Box } from './Scene/Box';
 import style from './background.module.scss';
 
-const Box = ({ index, progress }) => {
-  const mesh = useRef();
-  const p = (progress * 3) % 1;
-  const r = (index / 20) * 2;
-  const rot = (p + index / 10) * Math.PI * 2 * (4 - r);
-  return (
-    <mesh
-      rotation={[rot, rot, 0]}
-      position={[Math.cos(rot) * r, Math.sin(rot) * r, 0]}
-      ref={mesh}
-    >
-      <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color="orange" />
-    </mesh>
-  );
+const Camera = (props) => {
+  const ref = useRef();
+  const { setDefaultCamera } = useThree();
+  useEffect(() => setDefaultCamera(ref.current), []);
+  useFrame(() => (ref.current as Mesh).updateMatrixWorld());
+  return <perspectiveCamera ref={ref} {...props} />;
 };
 
 const Background = () => {
@@ -56,16 +51,25 @@ const Background = () => {
   const boxes = lists.map((index) => <Box index={index} progress={progress} />);
 
   return (
-    <Canvas className={style.bg_canvas} style={{ position: 'fixed', width: windowSize?.width || 0, height: windowSize?.height || 0 }}>
-      <ambientLight />
-      <pointLight position={[10, 10, 10]} />
-      {boxes}
-      <EffectComposer>
-        <DepthOfField focusDistance={0} focalLength={0.02} bokehScale={2} height={480} />
-        <Bloom luminanceThreshold={0} luminanceSmoothing={0.9} height={300} />
-        <Noise opacity={0.02} />
-        <Vignette eskil={false} offset={0.1} darkness={1.1} />
-      </EffectComposer>
+    <Canvas
+      className={style.bg_canvas}
+      style={{
+        position: 'fixed',
+        width: windowSize?.width || 0,
+        height: windowSize?.height || 0,
+      }}
+    >
+      <PerspectiveCamera makeDefault position={[0, 0, -10]}>
+        <ambientLight />
+        <pointLight position={[10, 10, 10]} />
+        {boxes}
+        <EffectComposer>
+          <DepthOfField focusDistance={0} focalLength={0.02} bokehScale={2} height={480} />
+          <Bloom luminanceThreshold={0} luminanceSmoothing={0.9} height={300} />
+          <Noise opacity={0.02} />
+          <Vignette eskil={false} offset={0.1} darkness={1.1} />
+        </EffectComposer>
+      </PerspectiveCamera>
     </Canvas>
   );
 };

@@ -1,10 +1,8 @@
 import {
   ShaderMaterial,
   Uniform,
-  Texture
 } from 'three';
 import { ShaderPass } from 'postprocessing';
-import React, { forwardRef, Ref, useMemo, useLayoutEffect } from 'react';
 
 const PostProcessingShader: {uniforms: any, vertexShader: string, fragmentShader: string} = {
   uniforms: {

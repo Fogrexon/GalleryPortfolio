@@ -1,8 +1,9 @@
+/* eslint-disable react/forbid-prop-types */
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 import { Style } from 'react-style-proptype';
-import style from './card.module.scss';
 import { FaAngleUp, FaAngleDown } from 'react-icons/fa';
+import style from './card.module.scss';
 
 const Card = ({
   title, link, upArrow, downArrow, style: styleObj,
@@ -21,14 +22,14 @@ Card.propTypes = {
   link: PropTypes.string,
   upArrow: PropTypes.bool,
   downArrow: PropTypes.bool,
-  styleObj: PropTypes.object,
+  style: Style,
 };
 
 Card.defaultProps = {
-  style: {},
   link: null,
   upArrow: false,
   downArrow: false,
+  style: {},
 };
 
 export default Card;
