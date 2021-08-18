@@ -1,20 +1,39 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { useState, useEffect, useRef } from 'react';
-import { Canvas, useThree, useFrame } from '@react-three/fiber';
-import { PerspectiveCamera } from '@react-three/drei';
+import { Canvas, useFrame } from '@react-three/fiber';
 import {
-  EffectComposer, DepthOfField, Bloom, Noise, Vignette,
+  EffectComposer,
 } from '@react-three/postprocessing';
-import { Mesh } from 'three';
-import { Box } from './Scene/Box';
+import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass';
+import { FXAAShader } from 'three/examples/jsm/shaders/FXAAShader'
+
+import { BlendFunction, Resizer, KernelSize } from 'postprocessing';
+import { City } from './Scene/City';
 import style from './background.module.scss';
 
-const Camera = (props) => {
-  const ref = useRef();
-  const { setDefaultCamera } = useThree();
-  useEffect(() => setDefaultCamera(ref.current), []);
-  useFrame(() => (ref.current as Mesh).updateMatrixWorld());
-  return <perspectiveCamera ref={ref} {...props} />;
+const Sun = (props) => (
+  <mesh {...props} position={[0, 2, -40]}>
+    <sphereGeometry args={[1, 36, 36]} />
+    <meshBasicMaterial color="#00FF00" />
+  </mesh>
+);
+
+const Effects = () => {
+  const sunRef = useRef();
+  return (
+    <>
+      <Sun ref={sunRef} />
+      {sunRef.current && (
+        <EffectComposer multisampling={0}>
+          <ShaderPass
+            attachArray="passes"
+            args={[FXAAShader]}
+            renderToScreen
+          />
+        </EffectComposer>
+      )}
+    </>
+  );
 };
 
 const Background = () => {
@@ -48,29 +67,33 @@ const Background = () => {
   const lists = [];
   for (let i = 0; i < 40; i += 1) lists.push(i);
 
-  const boxes = lists.map((index) => <Box index={index} progress={progress} />);
-
   return (
-    <Canvas
-      className={style.bg_canvas}
+    <div
       style={{
         position: 'fixed',
-        width: windowSize?.width || 0,
-        height: windowSize?.height || 0,
+        width: (windowSize?.width || 0),
+        height: (windowSize?.height || 0),
+        zIndex: -100,
+        // transform: 'scale(2.0)',
+        // transformOrigin: 'top left',
       }}
     >
-      <PerspectiveCamera makeDefault position={[0, 0, -10]}>
-        <ambientLight />
-        <pointLight position={[10, 10, 10]} />
-        {boxes}
-        <EffectComposer>
-          <DepthOfField focusDistance={0} focalLength={0.02} bokehScale={2} height={480} />
+      <Canvas
+        className={style.bg_canvas}
+        style={{ position: 'relative' }}
+        camera={{
+          position: [0, 0, -10], fov: 60, near: 0.0001, far: 100,
+        }}
+      >
+        <City progress={progress} />
+        <Effects />
+        {/* <EffectComposer>
+          <DepthOfField focusDistance={20} focalLength={0.02} bokehScale={2} height={480} />
           <Bloom luminanceThreshold={0} luminanceSmoothing={0.9} height={300} />
           <Noise opacity={0.02} />
-          <Vignette eskil={false} offset={0.1} darkness={1.1} />
-        </EffectComposer>
-      </PerspectiveCamera>
-    </Canvas>
+        </EffectComposer> */}
+      </Canvas>
+    </div>
   );
 };
 

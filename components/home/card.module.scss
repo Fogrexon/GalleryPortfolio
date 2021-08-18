@@ -1,4 +1,4 @@
-@import '../../styles/style.scss';
+@import "../../styles/style.scss";
 
 .card {
   width: 100vw;
@@ -15,6 +15,14 @@
     }
     div {
       font-size: 50px;
+    }
+    @include sp {
+      h1 {
+        font-size: 30px;
+      }
+      div {
+        font-size: 30px;
+      }
     }
   }
 }
