@@ -2,36 +2,21 @@
 import { useState, useEffect, useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import {
-  EffectComposer,
+  EffectComposer, DepthOfField, Bloom, Noise, Vignette, Outline,
 } from '@react-three/postprocessing';
 import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass';
-import { FXAAShader } from 'three/examples/jsm/shaders/FXAAShader'
+import { PostProcessing } from './PostProcessing/effect';
 
 import { BlendFunction, Resizer, KernelSize } from 'postprocessing';
 import { City } from './Scene/City';
 import style from './background.module.scss';
 
-const Sun = (props) => (
-  <mesh {...props} position={[0, 2, -40]}>
-    <sphereGeometry args={[1, 36, 36]} />
-    <meshBasicMaterial color="#00FF00" />
-  </mesh>
-);
-
 const Effects = () => {
-  const sunRef = useRef();
   return (
     <>
-      <Sun ref={sunRef} />
-      {sunRef.current && (
-        <EffectComposer multisampling={0}>
-          <ShaderPass
-            attachArray="passes"
-            args={[FXAAShader]}
-            renderToScreen
-          />
-        </EffectComposer>
-      )}
+      <EffectComposer>
+        <PostProcessing />
+      </EffectComposer>
     </>
   );
 };

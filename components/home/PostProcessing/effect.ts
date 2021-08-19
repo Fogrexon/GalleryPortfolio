@@ -3,6 +3,28 @@ import {
   Uniform,
 } from 'three';
 import { ShaderPass } from 'postprocessing';
+import { wrapEffect } from '@react-three/postprocessing/util.js'
+import React, { forwardRef, useMemo, useLayoutEffect, useRef } from 'react'
+import { Vector2 } from 'three'
+import { ReactThreeFiber } from '@react-three/fiber'
+import { Effect, BlendFunction } from 'postprocessing'
+
+const wrapEffect = <T extends new (...args: any[]) => Effect>(
+  effectImpl: T,
+  defaultBlendMode: BlendFunction = BlendFunction.NORMAL
+) =>
+  forwardRef<T, ConstructorParameters<typeof effectImpl>[0] & DefaultProps>(function Wrap(
+    { blendFunction, opacity, ...props }: React.PropsWithChildren<DefaultProps & ConstructorParameters<T>[0]>,
+    ref
+  ) {
+    const effect: Effect = useMemo(() => new effectImpl(props), [props])
+
+    useLayoutEffect(() => {
+      effect.blendMode.blendFunction = blendFunction || defaultBlendMode
+      if (opacity !== undefined) effect.blendMode.opacity.value = opacity
+    }, [blendFunction, effect.blendMode, opacity])
+    return <primitive ref={ref} object={effect} dispose={null} />
+  })
 
 const PostProcessingShader: {uniforms: any, vertexShader: string, fragmentShader: string} = {
   uniforms: {
@@ -31,9 +53,6 @@ void main() {
   `,
 };
 
-const PostProcessing = () => new ShaderPass(
-  new ShaderMaterial(PostProcessingShader),
-  'tex',
-);
+const PostProcessing = wrapEffect(PostProcessingShader);
 
 export default PostProcessing;
