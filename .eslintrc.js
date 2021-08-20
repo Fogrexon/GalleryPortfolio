@@ -55,6 +55,7 @@ module.exports = {
     // temporary
     'import/extensions': 'off',
     'import/no-unresolved': 'off',
+    'import/prefer-default-export': 'off',
   },
   overrides: [
     {
