@@ -23,6 +23,9 @@ export const GalleryItem = ({
     e.stopPropagation();
     ref.current.classList.remove(style.visible);
   };
+  const preventBubbling = (e) => {
+    e.stopPropagation();
+  };
 
   const mouseMove = (e) => {
     const rect = e.target.getBoundingClientRect();
@@ -43,15 +46,15 @@ export const GalleryItem = ({
   };
   const wrap = (
     <>
-      <div className={style.background} ref={ref} onClick={removeWork}>
-        <div className={style.details}>
+      <div className={style.background} ref={ref} onClick={removeWork} key="detal-card">
+        <div className={style.details} onClick={preventBubbling}>
           <img src={imgSrc} alt={name} />
           <h2>{name}</h2>
-          <div>
+          <div key="tags">
             Tags :
-            {tags.map((entry: string) => <span className={style.tags}>{entry}</span>)}
+            {tags.map((entry: string) => <span className={style.tags} key={entry}>{entry}</span>)}
           </div>
-          <div className={style.link_wrapper}>
+          <div className={style.link_wrapper} key="links">
             {link ? <span><a href={link} target="_blank" rel="noopener noreferrer">Link</a></span> : ''}
             {sourcecode ? <span><a href={sourcecode} target="_blank" rel="noopener noreferrer">Sourcecode</a></span> : ''}
           </div>
@@ -64,6 +67,7 @@ export const GalleryItem = ({
         onClick={clickWork}
         onMouseMove={mouseMove}
         onMouseLeave={mouseLeave}
+        key="gallery-card"
       >
         <div className={style.name}>
           {name}
@@ -88,13 +92,13 @@ GalleryItem.propTypes = {
 const GalleryWrapper = () => (
   <>
     <SectionTitle>作品集</SectionTitle>
-    <div className={style.wrapper}>
+    <div className={style.wrapper} key="works">
       {
       works.map((entry) => <GalleryItem item={entry} key={entry.name} />)
     }
     </div>
     <SectionTitle>参加中のプロジェクト</SectionTitle>
-    <div className={style.wrapper}>
+    <div className={style.wrapper} key="project">
       {
         joins.map((entry) => <GalleryItem item={entry} key={entry.name} />)
       }
@@ -102,7 +106,7 @@ const GalleryWrapper = () => (
 
     <SectionTitle>小物</SectionTitle>
     <p className={style.section_description}>授業課題とかで作った作品未満のプログラム</p>
-    <div className={style.wrapper}>
+    <div className={style.wrapper} key="small">
       {
         small.map((entry) => <GalleryItem item={entry} key={entry.name} />)
       }
