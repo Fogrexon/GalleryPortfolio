@@ -1,5 +1,13 @@
 [
   {
+    "name": "Fogrex-SNS",
+    "tags": ["JavaScript", "Nodejs"],
+    "link": "",
+    "sourcecode": "https://github.com/Fogrexon/Fogrex-SNS",
+    "image": "/gallery/fogrex-sns.png",
+    "description": "サーバーとフロントの勉強のために作ったツイッターもどき。マテリアルデザインのライブラリを使ってフロントを作り、Node.jsで認証等もきちんと実装した。DBにはMongoDBを使った。サーバーにお金がかかるので現在は停止中。"
+  },
+  {
     "name": "OhokayamaAdventure",
     "tags": ["JavaScript"],
     "link": "http://ohokayamaadventure.fogrex.trap.show/",
@@ -54,5 +62,13 @@
     "sourcecode": "https://github.com/CPCTF2021/Visualizer",
     "image": "/gallery/visualizer.jpg",
     "description": "部内で開かれたCPCTFのスコアを視覚的に表示するためのビジュアライザ。UnityのWebGLビルドで作られた。3人で制作。自分は木やポストエフェクトなどを担当。現在はウェブサイトが閉じられているので配信の録画をLinkに張った。後半はバグが修正されて停止しなくなった。木を自動生成したり、惑星を自動生成するなど、なるべく人の手を加えずに生成できるように工夫したのもポイント(本番では事前に生成したものを並べている)"
+  },
+  {
+    "name": "Tesseract",
+    "tags": ["UnityC#", "4D"],
+    "link": "https://youtu.be/0_AK0S2yAbk",
+    "sourcecode": "https://github.com/Fogrexon/FourDimension",
+    "image": "/gallery/tesseract.png",
+    "description": "4次元の超立方体(正八胞体, Tesseract)を3次元空間でスライスして表示するエンジン。ギリギリゲームとしての体裁を保ったやつ。Windowsのみ。解説ブログ: https://trap.jp/post/1346/"
   }
 ]
