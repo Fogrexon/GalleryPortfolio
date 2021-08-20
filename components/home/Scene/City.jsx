@@ -29,9 +29,9 @@ export const City = ({ progress }) => {
       const r = (tempObject.position.x / width / pillerSize) ** 2
         + (tempObject.position.z / height / pillerSize) ** 2;
       baseList.push(tempObject.position.y
-        + noise.noise2D(tempObject.position.x * 0.02, tempObject.position.z * 0.02) * r * 20);
+        + noise.noise2D(tempObject.position.x * 0.02, tempObject.position.z * 0.02) * r * 35);
       heightList.push(
-        8 * (Math.exp(-random.next() * 5)),
+        12 * (Math.exp(-random.next() * 5)),
       );
     }
   }
@@ -44,7 +44,7 @@ export const City = ({ progress }) => {
     meshRef.current.rotation.set(0, time * 0.2, 0);
 
     if (!flag) return;
-    flag = false; 
+    flag = false;
 
     for (let y = 0; y < height; y += 1) {
       for (let x = 0; x < width; x += 1) {
@@ -56,7 +56,7 @@ export const City = ({ progress }) => {
         );
         tempObject.scale.set(
           pillerSize,
-          progress * heightList[id] + 0.3,
+          progress * heightList[id] + 1,
           pillerSize,
         );
         tempObject.updateMatrix();
@@ -69,7 +69,7 @@ export const City = ({ progress }) => {
   return (
     <instancedMesh ref={meshRef} args={[null, null, width * height]} position={[0, -1, 0]}>
       <boxGeometry args={[1, 1, 1]} />
-      <meshNormalMaterial />
+      <meshDepthMaterial />
     </instancedMesh>
   );
 };

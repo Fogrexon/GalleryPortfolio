@@ -1,21 +1,28 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import { useState, useEffect, useRef } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
 import {
-  EffectComposer, DepthOfField, Bloom, Noise, Vignette, Outline,
-} from '@react-three/postprocessing';
-import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass';
-import { PostProcessing } from './PostProcessing/effect';
-
-import { BlendFunction, Resizer, KernelSize } from 'postprocessing';
+  useState, useEffect, Suspense,
+} from 'react';
+import { Canvas, useFrame } from '@react-three/fiber';
+import { EffectComposer } from '@react-three/postprocessing';
+import { MyCustomEffect } from './PostProcessing/CustomEffect';
 import { City } from './Scene/City';
 import style from './background.module.scss';
 
-const Effects = () => {
+const Effects = ({ progress, aspect }) => {
+  const [time, setTime] = useState(0);
+
+  useFrame(() => {
+    setTime(time + 0.1);
+  });
   return (
     <>
-      <EffectComposer>
-        <PostProcessing />
+      <EffectComposer multisampling={0} disableNormalPass>
+        <MyCustomEffect uniforms={new Map([
+          ['progress', { value: progress }],
+          ['aspect', { value: aspect }],
+          ['time', { value: time }],
+        ])}
+        />
       </EffectComposer>
     </>
   );
@@ -24,7 +31,7 @@ const Effects = () => {
 const Background = () => {
   const [progress, setProgress] = useState(0);
   const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
-  // const mesh = useRef();
+
   useEffect(() => {
     setWindowSize({
       width: window.innerWidth,
@@ -59,24 +66,30 @@ const Background = () => {
         width: (windowSize?.width || 0),
         height: (windowSize?.height || 0),
         zIndex: -100,
-        // transform: 'scale(2.0)',
-        // transformOrigin: 'top left',
       }}
     >
       <Canvas
         className={style.bg_canvas}
         style={{ position: 'relative' }}
         camera={{
-          position: [0, 0, -10], fov: 60, near: 0.0001, far: 100,
+          position: [0, 0, -10], fov: 60, near: 1, far: 100,
+        }}
+        gl={{
+          powerPreference: 'high-performance',
+          alpha: false,
+          antialias: false,
+          stencil: false,
+          depth: false,
         }}
       >
-        <City progress={progress} />
-        <Effects />
-        {/* <EffectComposer>
-          <DepthOfField focusDistance={20} focalLength={0.02} bokehScale={2} height={480} />
-          <Bloom luminanceThreshold={0} luminanceSmoothing={0.9} height={300} />
-          <Noise opacity={0.02} />
-        </EffectComposer> */}
+        <Suspense fallback={null}>
+          <mesh position={[0, 0, 100]}>
+            <boxGeometry args={[1000, 1000, 1]} />
+            <meshBasicMaterial color={0x000000} />
+          </mesh>
+          <City progress={progress} />
+        </Suspense>
+        <Effects progress={progress} aspect={windowSize.width / windowSize.height} />
       </Canvas>
     </div>
   );
