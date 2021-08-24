@@ -1,0 +1,14 @@
+.line_clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.blog_card {
+  width: 90%;
+  max-width: 980px;
+  padding: 30px;
+  margin: 30px auto;
+  border: black solid 1px;
+}
