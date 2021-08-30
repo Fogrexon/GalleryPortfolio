@@ -1,13 +1,5 @@
 [
   {
-    "name": "HackAndSlash(仮称)",
-    "tags": ["UnityC#"],
-    "link": null,
-    "sourcecode": null,
-    "image": null,
-    "description": "ハクスラ形式のゲーム。プログラム担当。"
-  },
-  {
     "name": "anke-to v2",
     "tags": ["Vue"],
     "sourcecode": "https://github.com/traPtitech/anke-to-UI",
