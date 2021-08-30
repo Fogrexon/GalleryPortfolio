@@ -1,17 +1,20 @@
-import { useRouter } from 'next/router';
-
 import Inner from '../../components/utils/inner';
 import Header from '../../components/utils/header';
-import Section from '../../components/about/section';
 
 import client from '../../components/blog/client';
+import BlogHeader from '../../components/blog/blogheader';
+
+import style from '../../components/blog/blog.module.scss';
+
 
 const Blog = ({ blog }) => (
   <>
     <Header title={blog.title} />
     <Inner>
-        <div>{(new Date(blog.createdAt)).toString()}</div>
-        <div dangerouslySetInnerHTML={{__html: blog.content}} />
+      <BlogHeader />
+      <h1>{blog.title}</h1>
+      <div>{(new Date(blog.createdAt)).toString()}</div>
+      <div dangerouslySetInnerHTML={{ __html: blog.content }} className={style.blog_content} />
     </Inner>
   </>
 );

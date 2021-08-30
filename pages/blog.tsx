@@ -10,7 +10,7 @@ const Blog = ({ blogData }) => (
   <>
     <Header title="Blog" />
     <Inner>
-      <Section title="List">
+      <Section title="Blog">
         {
             blogData.contents.map((blog) => (
               <div key={blog.id} className={style.blog_card}>

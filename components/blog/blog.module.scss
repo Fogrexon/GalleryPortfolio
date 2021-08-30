@@ -1,3 +1,5 @@
+@import "../../styles/style.scss";
+
 .line_clamp {
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -11,4 +13,46 @@
   padding: 30px;
   margin: 30px auto;
   border: black solid 1px;
+}
+
+.header {
+  height: 64px;
+  width: 100%;
+  div {
+    @include inner;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    ul {
+      position: absolute;
+      left: 0px;
+      list-style: none;
+      padding: 0px;
+      li {
+        display: inline-block;
+        margin: 10px;
+      }
+    }
+    svg {
+      height: 50px;
+    }
+  }
+  @include sp {
+    height: inherit;
+    div {
+      ul {
+        position: static;
+      }
+    }
+  }
+}
+
+.blog_content {
+  img {
+    width: 100%;
+  }
 }
