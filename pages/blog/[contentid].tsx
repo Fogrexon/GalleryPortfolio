@@ -6,6 +6,11 @@ import BlogHeader from '../../components/blog/blogheader';
 
 import style from '../../components/blog/blog.module.scss';
 
+interface BlogData {
+  contents: {
+    id: string;
+  }[];
+}
 
 const Blog = ({ blog }) => (
   <>
@@ -21,10 +26,10 @@ const Blog = ({ blog }) => (
 export default Blog;
 
 export async function getStaticPaths() {
-  const blogData = await client.get({
+  const blogData = await client.get<BlogData>({
     endpoint: 'blog',
   });
-  const paths = blogData.contents?.map((blog) => ({
+  const paths = blogData.contents.map((blog) => ({
     params: { contentid: blog.id },
   }));
 
