@@ -10,8 +10,8 @@ const Header = ({ title }) => (
     <header className={style.header}>
       <div>
         <a href="/">
-          <svg height="100" width="100">
-            <polygon points="50,0 100,86.6 0,86.6" />
+          <svg viewBox="0, 0, 100, 100">
+            <polygon points="50,8.4 100,95 0,95" stroke="black" fill="none" stroke-width="3" />
           </svg>
         </a>
         <ul>
