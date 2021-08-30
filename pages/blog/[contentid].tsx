@@ -12,17 +12,20 @@ interface BlogData {
   }[];
 }
 
-const Blog = ({ blog }) => (
+const Blog = ({ blog }) => {
+  const date = new Date(blog.createdAt);
+  return (
   <>
     <Header title={blog.title} />
     <Inner>
       <BlogHeader />
       <h1>{blog.title}</h1>
-      <div>{(new Date(blog.createdAt)).toString()}</div>
+      <div>{`${date.getFullYear()}/${date.getMonth()}/${date.getDate()}`}</div>
       <div dangerouslySetInnerHTML={{ __html: blog.content }} className={style.blog_content} />
     </Inner>
   </>
 );
+  };
 export default Blog;
 
 export async function getStaticPaths() {

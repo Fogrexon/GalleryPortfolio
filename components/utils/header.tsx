@@ -11,7 +11,7 @@ const Header = ({ title }) => (
       <div>
         <a href="/">
           <svg viewBox="0, 0, 100, 100">
-            <polygon points="50,8.4 100,95 0,95" stroke="black" fill="none" stroke-width="3" />
+            <polygon points="50,8.4 100,95 0,95" stroke="black" fill="none" strokeWidth="3" />
           </svg>
         </a>
         <ul>
