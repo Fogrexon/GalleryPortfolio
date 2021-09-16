@@ -19,7 +19,7 @@ const Blog = ({ blog }) => {
   const router = useRouter();
   return (
     <>
-      <Head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/#">
+      <Head>
 
         <meta property="og:url" content={router.basePath + router.pathname} />
 
@@ -30,6 +30,8 @@ const Blog = ({ blog }) => {
         <meta property="og:description" content={blog.content.slice(0, 50)} />
 
         <meta property="og:site_name" content="Fogrex website" />
+
+        <meta name="twitter:card" content="summary" />
       </Head>
       <Header title={blog.title} />
       <Inner>
