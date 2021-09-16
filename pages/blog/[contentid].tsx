@@ -56,7 +56,7 @@ export async function getStaticPaths() {
   return { paths, fallback: false };
 }
 
-export const getInitialProps = async ({ params: { contentid } }) => {
+export const getStaticProps = async ({ params: { contentid } }) => {
   const blog = await client.get({
     endpoint: 'blog',
     contentId: contentid,
