@@ -14,20 +14,20 @@ interface BlogData {
   }[];
 }
 
-const Blog = ({ blog }) => {
+const Blog = ({ blog, contentId }) => {
   const date = new Date(blog.createdAt);
   const router = useRouter();
   return (
     <>
       <Head>
 
-        <meta property="og:url" content={router.basePath + router.pathname} />
+        <meta property="og:url" content={`${router.basePath}blog/${contentId}`} />
 
         <meta property="og:type" content="article" />
 
         <meta property="og:title" content={blog.title} />
 
-        <meta property="og:description" content={blog.content.slice(0, 50)} />
+        <meta property="og:description" content={blog.content} />
 
         <meta property="og:site_name" content="Fogrex website" />
 
@@ -56,7 +56,7 @@ export async function getStaticPaths() {
   return { paths, fallback: false };
 }
 
-export const getInitialProps = async ({ params: { contentid } }) => {
+export const getStaticProps = async ({ params: { contentid } }) => {
   const blog = await client.get({
     endpoint: 'blog',
     contentId: contentid,
@@ -65,6 +65,7 @@ export const getInitialProps = async ({ params: { contentid } }) => {
   return {
     props: {
       blog,
+      contentId: contentid,
     },
   };
 };

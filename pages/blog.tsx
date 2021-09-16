@@ -28,7 +28,7 @@ const Blog = ({ blogData }) => (
 );
 export default Blog;
 
-export const getInitialProps = async () => {
+export const getStaticProps = async () => {
   const blogData = await client.get({
     endpoint: 'blog',
   });
