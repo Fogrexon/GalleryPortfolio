@@ -27,7 +27,7 @@ const Blog = ({ blog, contentId }) => {
 
         <meta property="og:title" content={blog.title} />
 
-        <meta property="og:description" content={blog.content.slice(0, 50)} />
+        <meta property="og:description" content={blog.content} />
 
         <meta property="og:site_name" content="Fogrex website" />
 
