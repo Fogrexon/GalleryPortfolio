@@ -14,14 +14,14 @@ interface BlogData {
   }[];
 }
 
-const Blog = ({ blog }) => {
+const Blog = ({ blog, contentId }) => {
   const date = new Date(blog.createdAt);
   const router = useRouter();
   return (
     <>
       <Head>
 
-        <meta property="og:url" content={router.basePath + router.pathname} />
+        <meta property="og:url" content={`${router.basePath}blog/${contentId}`} />
 
         <meta property="og:type" content="article" />
 
@@ -65,6 +65,7 @@ export const getInitialProps = async ({ params: { contentid } }) => {
   return {
     props: {
       blog,
+      contentId: contentid,
     },
   };
 };
