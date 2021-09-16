@@ -1,3 +1,5 @@
+import Head from 'next/head';
+import { useRouter } from 'next/router';
 import Inner from '../../components/utils/inner';
 import Header from '../../components/utils/header';
 
@@ -14,18 +16,33 @@ interface BlogData {
 
 const Blog = ({ blog }) => {
   const date = new Date(blog.createdAt);
+  const router = useRouter();
   return (
-  <>
-    <Header title={blog.title} />
-    <Inner>
-      <BlogHeader />
-      <h1>{blog.title}</h1>
-      <div>{`${date.getFullYear()}/${date.getMonth()}/${date.getDate()}`}</div>
-      <div dangerouslySetInnerHTML={{ __html: blog.content }} className={style.blog_content} />
-    </Inner>
-  </>
-);
-  };
+    <>
+      <Head>
+
+        <meta property="og:url" content={router.basePath + router.pathname} />
+
+        <meta property="og:type" content="article" />
+
+        <meta property="og:title" content={blog.title} />
+
+        <meta property="og:description" content={blog.content.slice(0, 50)} />
+
+        <meta property="og:site_name" content="Fogrex website" />
+
+        <meta name="twitter:card" content="summary" />
+      </Head>
+      <Header title={blog.title} />
+      <Inner>
+        <BlogHeader />
+        <h1>{blog.title}</h1>
+        <div>{`${date.getFullYear()}/${date.getMonth()}/${date.getDate()}`}</div>
+        <div dangerouslySetInnerHTML={{ __html: blog.content }} className={style.blog_content} />
+      </Inner>
+    </>
+  );
+};
 export default Blog;
 
 export async function getStaticPaths() {
@@ -39,7 +56,7 @@ export async function getStaticPaths() {
   return { paths, fallback: false };
 }
 
-export const getStaticProps = async ({ params: { contentid } }) => {
+export const getInitialProps = async ({ params: { contentid } }) => {
   const blog = await client.get({
     endpoint: 'blog',
     contentId: contentid,
