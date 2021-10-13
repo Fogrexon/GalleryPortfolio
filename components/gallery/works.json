@@ -70,5 +70,13 @@
     "sourcecode": "https://github.com/Fogrexon/FourDimension",
     "image": "/gallery/tesseract.png",
     "description": "4次元の超立方体(正八胞体, Tesseract)を3次元空間でスライスして表示するエンジン。ギリギリゲームとしての体裁を保ったやつ。Windowsのみ。解説ブログ: https://trap.jp/post/1346/"
+  },
+  {
+    "name": "SpinningCat!",
+    "tags": ["UnityC#", "3D"],
+    "link": "https://drive.google.com/file/d/1iCvDmgq1BA7gqQGNBriH8wRM1gAmNuFh/view?usp=sharing",
+    "sourcecode": "",
+    "image": "/gallery/SpinningCat.png",
+    "description": "猫をぶんなげるゲーム。15日でゲームを作る15jamの企画の延長で作ったもの。地形の自動生成やCinemachineやUniRxなどのライブラリの仕様、地形の自動生成やポスプロなどゲーム体験にこだわってみたくて作った実験作品でもある。linkからダウンロード出来ます(WIndowsのみ)"
   }
 ]
