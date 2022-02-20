@@ -1,0 +1,40 @@
+name: lint
+on:
+  - pull_request
+jobs:
+  pages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./.github/workflows/lint/diff
+        name: diff
+        id: diff
+        with:
+          subdir: pages
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+      - name: lint
+        if: steps.diff.outputs.diff-count > 0
+        working-directory: ./pages
+        run: | 
+          npm install
+          npm run format
+  components:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./.github/workflows/lint/diff
+        name: diff
+        id: diff
+        with:
+          subdir: components
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+      - name: lint
+        if: steps.diff.outputs.diff-count > 0
+        working-directory: ./components
+        run: | 
+          npm install
+          npm run format
