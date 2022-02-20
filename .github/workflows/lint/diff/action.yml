@@ -14,6 +14,6 @@ runs:
         TARGET_BRANCH: ${{ github.base_ref }}
       run: |
         git fetch origin ${TARGET_BRANCH}
-        count=`git diff origin/${TARGET_BRANCH} HEAD --name-only --relative=${{ inputs.subdir }} | wc -l`
+        count=`git diff origin/${TARGET_BRANCH} HEAD --name-only | wc -l`
         echo "::set-output name=diff-count::$(echo $count)"
       shell: bash
