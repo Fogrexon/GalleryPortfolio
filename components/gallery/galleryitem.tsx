@@ -69,7 +69,7 @@ export const GalleryItem: VFC<GalleryItemProps> = ({
           <div className={style.link_wrapper} key="links">
             {link ? <span><a href={link} target="_blank" rel="noopener noreferrer">Link</a></span> : ''}
             {sourcecode ? <span><a href={sourcecode} target="_blank" rel="noopener noreferrer">Sourcecode</a></span> : ''}
-            {demo ? <span><a href={sourcecode} target="_blank" rel="noopener noreferrer">Demo</a></span> : ''}
+            {demo ? <span><a href={demo} target="_blank" rel="noopener noreferrer">Demo</a></span> : ''}
           </div>
           <p>{description}</p>
         </div>

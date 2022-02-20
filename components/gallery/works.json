@@ -85,7 +85,7 @@
   {
     "name": "Graphim",
     "tags": ["Typescript", "Shader", "WebGL"],
-    "demo": "https://fogrexon.github.io/Graphim/examples/node-blend.html",
+    "demo": "https://fogrexon.github.io/Graphim/examples/",
     "link": "https://www.npmjs.com/package/graphim",
     "sourcecode": "https://github.com/Fogrexon/Graphim",
     "image": "/gallery/graphim.png",
