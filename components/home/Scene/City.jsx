@@ -1,9 +1,9 @@
-import React, { useRef } from 'react';
-import PropTypes from 'prop-types';
-import * as THREE from 'three';
-import { useFrame } from '@react-three/fiber';
-import SimplexNoise from 'simplex-noise';
-import { Random } from '../../utils/XorShift';
+import React, { useRef } from "react";
+import PropTypes from "prop-types";
+import * as THREE from "three";
+import { useFrame } from "@react-three/fiber";
+import SimplexNoise from "simplex-noise";
+import { Random } from "../../utils/XorShift";
 
 const width = 40;
 const height = 40;
@@ -24,15 +24,21 @@ export const City = ({ progress }) => {
       tempObject.position.set(
         (x - width * 0.5) * (pillerSize + 0.001),
         -4,
-        (y - height * 0.5) * (pillerSize + 0.001),
+        (y - height * 0.5) * (pillerSize + 0.001)
       );
-      const r = (tempObject.position.x / width / pillerSize) ** 2
-        + (tempObject.position.z / height / pillerSize) ** 2;
-      baseList.push(tempObject.position.y
-        + noise.noise2D(tempObject.position.x * 0.02, tempObject.position.z * 0.02) * r * 35);
-      heightList.push(
-        12 * (Math.exp(-random.next() * 5)),
+      const r =
+        (tempObject.position.x / width / pillerSize) ** 2 +
+        (tempObject.position.z / height / pillerSize) ** 2;
+      baseList.push(
+        tempObject.position.y +
+          noise.noise2D(
+            tempObject.position.x * 0.02,
+            tempObject.position.z * 0.02
+          ) *
+            r *
+            35
       );
+      heightList.push(12 * Math.exp(-random.next() * 5));
     }
   }
 
@@ -52,12 +58,12 @@ export const City = ({ progress }) => {
         tempObject.position.set(
           (x - width * 0.5) * (pillerSize + 0.001),
           baseList[id],
-          (y - height * 0.5) * (pillerSize + 0.001),
+          (y - height * 0.5) * (pillerSize + 0.001)
         );
         tempObject.scale.set(
           pillerSize,
           progress * heightList[id] + 1,
-          pillerSize,
+          pillerSize
         );
         tempObject.updateMatrix();
         meshRef.current.setMatrixAt(id, tempObject.matrix);
@@ -67,7 +73,11 @@ export const City = ({ progress }) => {
   });
 
   return (
-    <instancedMesh ref={meshRef} args={[null, null, width * height]} position={[0, -1, 0]}>
+    <instancedMesh
+      ref={meshRef}
+      args={[null, null, width * height]}
+      position={[0, -1, 0]}
+    >
       <boxGeometry args={[1, 1, 1]} />
       <meshDepthMaterial />
     </instancedMesh>

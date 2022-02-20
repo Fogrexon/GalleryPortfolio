@@ -1,4 +1,4 @@
-import { createClient } from 'microcms-js-sdk';
+import { createClient } from "microcms-js-sdk";
 
 const client = createClient({
   serviceDomain: process.env.MICROCMS_DOMAIN_NAME,

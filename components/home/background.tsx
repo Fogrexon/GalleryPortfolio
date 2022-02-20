@@ -1,12 +1,10 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import {
-  useState, useEffect, Suspense,
-} from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
-import { EffectComposer } from '@react-three/postprocessing';
-import { MyCustomEffect } from './PostProcessing/CustomEffect';
-import { City } from './Scene/City';
-import style from './background.module.scss';
+import { useState, useEffect, Suspense } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { EffectComposer } from "@react-three/postprocessing";
+import { MyCustomEffect } from "./PostProcessing/CustomEffect";
+import { City } from "./Scene/City";
+import style from "./background.module.scss";
 
 const Effects = ({ progress, aspect }) => {
   const [time, setTime] = useState(0);
@@ -17,11 +15,14 @@ const Effects = ({ progress, aspect }) => {
   return (
     <>
       <EffectComposer multisampling={0} disableNormalPass>
-        <MyCustomEffect uniforms={new Map([
-          ['progress', { value: progress }],
-          ['aspect', { value: aspect }],
-          ['time', { value: time }],
-        ])}
+        <MyCustomEffect
+          uniforms={
+            new Map([
+              ["progress", { value: progress }],
+              ["aspect", { value: aspect }],
+              ["time", { value: time }],
+            ])
+          }
         />
       </EffectComposer>
     </>
@@ -39,7 +40,8 @@ const Background = () => {
     });
     const onScroll = () => {
       setProgress(
-        document.documentElement.scrollTop / (document.body.clientHeight - window.innerHeight),
+        document.documentElement.scrollTop /
+          (document.body.clientHeight - window.innerHeight)
       );
     };
     const onResize = () => {
@@ -48,11 +50,11 @@ const Background = () => {
         height: window.innerHeight,
       });
     };
-    window.addEventListener('scroll', onScroll);
-    window.addEventListener('resize', onResize);
+    window.addEventListener("scroll", onScroll);
+    window.addEventListener("resize", onResize);
     return () => {
-      window.removeEventListener('scroll', onScroll);
-      window.removeEventListener('resize', onResize);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onResize);
     };
   }, []);
 
@@ -62,20 +64,23 @@ const Background = () => {
   return (
     <div
       style={{
-        position: 'fixed',
-        width: (windowSize?.width || 0),
-        height: (windowSize?.height || 0),
+        position: "fixed",
+        width: windowSize?.width || 0,
+        height: windowSize?.height || 0,
         zIndex: -100,
       }}
     >
       <Canvas
         className={style.bg_canvas}
-        style={{ position: 'relative' }}
+        style={{ position: "relative" }}
         camera={{
-          position: [0, 0, -10], fov: 60, near: 1, far: 100,
+          position: [0, 0, -10],
+          fov: 60,
+          near: 1,
+          far: 100,
         }}
         gl={{
-          powerPreference: 'high-performance',
+          powerPreference: "high-performance",
           alpha: false,
           antialias: false,
           stencil: false,
@@ -89,7 +94,10 @@ const Background = () => {
           </mesh>
           <City progress={progress} />
         </Suspense>
-        <Effects progress={progress} aspect={windowSize.width / windowSize.height} />
+        <Effects
+          progress={progress}
+          aspect={windowSize.width / windowSize.height}
+        />
       </Canvas>
     </div>
   );

@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types';
-import style from './inner.module.scss';
+import PropTypes from "prop-types";
+import style from "./inner.module.scss";
 
 const Inner = ({ children }) => <div className={style.inner}>{children}</div>;
 

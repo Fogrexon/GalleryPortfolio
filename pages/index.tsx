@@ -1,14 +1,14 @@
-import Head from 'next/head';
-import { useEffect } from 'react';
-import Card from '../components/home/card';
-import Background from '../components/home/background';
+import Head from "next/head";
+import { useEffect } from "react";
+import Card from "../components/home/card";
+import Background from "../components/home/background";
 
 const scrollEventHandler = (entries: IntersectionObserverEntry[]) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       window.scrollTo({
         top: window.pageYOffset + entry.boundingClientRect.top,
-        behavior: 'smooth',
+        behavior: "smooth",
       });
     }
   });
@@ -18,11 +18,11 @@ const Home = () => {
   let observer;
   useEffect(() => {
     observer = new IntersectionObserver(scrollEventHandler, {
-      rootMargin: '0px',
+      rootMargin: "0px",
       threshold: 0.01,
     });
 
-    const { children } = document.getElementById('cardholder');
+    const { children } = document.getElementById("cardholder");
 
     for (let i = 0; i < children.length; i += 1) {
       observer.observe(children[i]);

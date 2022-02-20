@@ -1,4 +1,4 @@
-import style from './blog.module.scss';
+import style from "./blog.module.scss";
 
 const BlogHeader = () => (
   <header className={style.header}>
