@@ -1,0 +1,32 @@
+name: lint
+on:
+  - pull_request
+jobs:
+  pages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./.github/workflows/lint/diff
+        name: diff
+        id: diff
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+      - name: lint
+        if: steps.diff.outputs.diff-count > 0
+        working-directory: ./
+        run: | 
+          npm install
+          npm run format
+      - name: push
+        if: steps.diff.outputs.diff-count > 0
+        run: |
+          git remote set-url origin https://github-actions:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}
+          git config --global user.name "${GITHUB_ACTOR}"
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          if (git diff --shortstat | grep '[0-9]'); then \
+            git add ./pages/*; \
+            git add ./components/*; \
+            git commit -m "Add format"; \
+            git push origin HEAD:${GITHUB_REF}; \
+          fi

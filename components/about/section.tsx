@@ -1,6 +1,6 @@
-import PropTypes from 'prop-types';
-import style from './section.module.scss';
-import SectionTitle from '../utils/section';
+import PropTypes from "prop-types";
+import style from "./section.module.scss";
+import SectionTitle from "../utils/section";
 
 const Section = ({ title, children }) => (
   <div className={style.section}>

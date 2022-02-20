@@ -1,7 +1,7 @@
 /* eslint-disable react/forbid-prop-types */
-import React, { forwardRef, useMemo } from 'react';
-import { Effect, BlendFunction, EffectAttribute } from 'postprocessing';
-import { PrimitiveProps } from '@react-three/fiber';
+import React, { forwardRef, useMemo } from "react";
+import { Effect, BlendFunction, EffectAttribute } from "postprocessing";
+import { PrimitiveProps } from "@react-three/fiber";
 
 const fragmentShader = `
 #ifdef FRAMEBUFFER_PRECISION_HIGH
@@ -79,7 +79,7 @@ void mainImage(const in vec4 inputColor, const in vec2 uv, const in float depth,
 // Effect implementation
 class MyCustomEffectImpl extends Effect {
   constructor(uniforms) {
-    super('MyCustomEffect', fragmentShader, {
+    super("MyCustomEffect", fragmentShader, {
       blendFunction: BlendFunction.NORMAL,
       attributes: EffectAttribute.DEPTH,
       uniforms,
@@ -92,13 +92,12 @@ class MyCustomEffectImpl extends Effect {
 
 type MyCustomEffectProps = {
   uniforms: Map<string, any>;
-
-}
+};
 
 // Effect component
 export const MyCustomEffect = forwardRef<PrimitiveProps, MyCustomEffectProps>(
   ({ uniforms }, ref) => {
     const effect = useMemo(() => new MyCustomEffectImpl(uniforms), [uniforms]);
     return <primitive ref={ref} object={effect} dispose={null} />;
-  },
+  }
 );

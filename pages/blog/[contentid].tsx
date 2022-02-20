@@ -1,12 +1,12 @@
-import Head from 'next/head';
-import { useRouter } from 'next/router';
-import Inner from '../../components/utils/inner';
-import Header from '../../components/utils/header';
+import Head from "next/head";
+import { useRouter } from "next/router";
+import Inner from "../../components/utils/inner";
+import Header from "../../components/utils/header";
 
-import client from '../../components/blog/client';
-import BlogHeader from '../../components/blog/blogheader';
+import client from "../../components/blog/client";
+import BlogHeader from "../../components/blog/blogheader";
 
-import style from '../../components/blog/blog.module.scss';
+import style from "../../components/blog/blog.module.scss";
 
 interface BlogData {
   contents: {
@@ -20,8 +20,10 @@ const Blog = ({ blog, contentId }) => {
   return (
     <>
       <Head>
-
-        <meta property="og:url" content={`${router.basePath}blog/${contentId}`} />
+        <meta
+          property="og:url"
+          content={`${router.basePath}blog/${contentId}`}
+        />
 
         <meta property="og:type" content="article" />
 
@@ -38,7 +40,10 @@ const Blog = ({ blog, contentId }) => {
         <BlogHeader />
         <h1>{blog.title}</h1>
         <div>{`${date.getFullYear()}/${date.getMonth()}/${date.getDate()}`}</div>
-        <div dangerouslySetInnerHTML={{ __html: blog.content }} className={style.blog_content} />
+        <div
+          dangerouslySetInnerHTML={{ __html: blog.content }}
+          className={style.blog_content}
+        />
       </Inner>
     </>
   );
@@ -47,7 +52,7 @@ export default Blog;
 
 export async function getStaticPaths() {
   const blogData = await client.get<BlogData>({
-    endpoint: 'blog',
+    endpoint: "blog",
   });
   const paths = blogData.contents.map((blog) => ({
     params: { contentid: blog.id },
@@ -58,7 +63,7 @@ export async function getStaticPaths() {
 
 export const getStaticProps = async ({ params: { contentid } }) => {
   const blog = await client.get({
-    endpoint: 'blog',
+    endpoint: "blog",
     contentId: contentid,
   });
 
