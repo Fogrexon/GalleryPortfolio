@@ -1,16 +1,28 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import { useRef, useState } from 'react';
-import PropTypes from 'prop-types';
+import { useRef, useState, VFC } from 'react';
 import SectionTitle from '../utils/section';
+import Image from 'next/image';
 import style from './galleryitem.module.scss';
 import works from './works.json';
 import joins from './joins.json';
 import small from './small.json';
 
-export const GalleryItem = ({
+interface GalleryItemProps {
   item: {
-    name, tags, link, sourcecode, image, description,
+    name: string;
+    tags: string[];
+    link?: string;
+    sourcecode?: string;
+    demo?: string;
+    image?: string;
+    description: string;
+  };
+};
+
+export const GalleryItem: VFC<GalleryItemProps> = ({
+  item: {
+    name, tags, link, sourcecode, image, description, demo
   },
 }) => {
   const imgSrc = image || '/gallery/noimage.png';
@@ -57,6 +69,7 @@ export const GalleryItem = ({
           <div className={style.link_wrapper} key="links">
             {link ? <span><a href={link} target="_blank" rel="noopener noreferrer">Link</a></span> : ''}
             {sourcecode ? <span><a href={sourcecode} target="_blank" rel="noopener noreferrer">Sourcecode</a></span> : ''}
+            {demo ? <span><a href={demo} target="_blank" rel="noopener noreferrer">Demo</a></span> : ''}
           </div>
           <p>{description}</p>
         </div>
@@ -78,18 +91,9 @@ export const GalleryItem = ({
   return wrap;
 };
 
-GalleryItem.propTypes = {
-  item: PropTypes.exact({
-    name: PropTypes.string.isRequired,
-    tags: PropTypes.arrayOf(PropTypes.string),
-    link: PropTypes.string,
-    sourcecode: PropTypes.string,
-    image: PropTypes.string,
-    description: PropTypes.string,
-  }).isRequired,
-};
 
-const GalleryWrapper = () => (
+
+const GalleryWrapper: VFC = () => (
   <>
     <SectionTitle>作品集</SectionTitle>
     <div className={style.wrapper} key="works">
@@ -105,7 +109,7 @@ const GalleryWrapper = () => (
     </div>
 
     <SectionTitle>小物</SectionTitle>
-    <p className={style.section_description}>授業課題とかで作った作品未満のプログラム</p>
+    <p className={style.section_description}>授業課題などで作った作品未満のプログラム</p>
     <div className={style.wrapper} key="small">
       {
         small.map((entry) => <GalleryItem item={entry} key={entry.name} />)
