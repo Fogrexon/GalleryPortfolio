@@ -1,7 +1,8 @@
 {
   "rules": {
     "at-rule-no-unknown": [true, { "ignoreAtRules": ["include", "mixin"] }],
-    "selector-class-pattern": "^([a-z][a-z0-9]*)(_[a-z0-9]+)*$"
+    "selector-class-pattern": "^([a-z][a-z0-9]*)(_[a-z0-9]+)*$",
+    "alpha-value-notation": "number"
   },
   "extends": [
     "stylelint-config-standard",

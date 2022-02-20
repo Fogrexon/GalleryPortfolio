@@ -8,10 +8,10 @@
     "start": "next start",
     "eslint": "eslint --ext .ts,.tsx ./components/* && eslint --ext .ts,.tsx ./pages/*",
     "prettier": "prettier './components/**/*.{js,jsx,ts,tsx}' && prettier './pages/**/*.{js,jsx,ts,tsx}'",
-    "style": "stylelint \"components/**/*.{scss,css}\"",
+    "style": "stylelint \"components/**/*.{scss,css}\" && stylelint \"styles/**/*.{scss,css}\"",
     "eslint:fix": "eslint --fix './components/**/*.{js,jsx,ts,tsx}' && eslint --fix './pages/**/*.{js,jsx,ts,tsx}'",
     "prettier:fix": "prettier --write './components/**/*.{js,jsx,ts,tsx}' && prettier --write './pages/**/*.{js,jsx,ts,tsx}'",
-    "style:fix": "stylelint --fix \"components/**/*.{scss,css}\"",
+    "style:fix": "stylelint --fix \"components/**/*.{scss,css}\" && stylelint \"styles/**/*.{scss,css}\"",
     "check": "npm run eslint && npm run prettier && npm run style",
     "format": "npm run eslint:fix && npm run prettier:fix && npm run style:fix"
   },
