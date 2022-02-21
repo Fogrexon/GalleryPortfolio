@@ -20,9 +20,8 @@
   },
   "include": [
     "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-, "pages/_app.js", "components/home/Scene/Box.js"  ],
+    "src/**/*.ts",
+    "src/**/*.tsx" ],
   "exclude": [
     "node_modules"
   ]
