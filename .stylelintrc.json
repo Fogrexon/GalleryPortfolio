@@ -1,11 +1,12 @@
 {
-  "rules": {
-    "at-rule-no-unknown": [true, { "ignoreAtRules": ["include", "mixin"] }],
-    "selector-class-pattern": "^([a-z][a-z0-9]*)(_[a-z0-9]+)*$"
-  },
   "extends": [
     "stylelint-config-standard",
     "stylelint-config-standard-scss",
     "stylelint-config-recess-order"
-  ]
+  ],
+  "rules": {
+    "at-rule-no-unknown": [true, { "ignoreAtRules": ["include", "mixin"] }],
+    "selector-class-pattern": "^([a-z][a-z0-9]*)(_[a-z0-9]+)*$",
+    "alpha-value-notation": null
+  }
 }

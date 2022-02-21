@@ -1,7 +1,9 @@
 @import "../../styles/style";
 
 .line_clamp {
-  display: box;
+  /* stylelint-disable-next-line value-no-vendor-prefix */
+  display: -webkit-box;
+  flex: 1;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;

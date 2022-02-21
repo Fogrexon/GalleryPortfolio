@@ -3,9 +3,11 @@ description: diff
 inputs:
   subdir:
     required: true
+    description: ''
 outputs:
   diff-count:
     value: ${{ steps.diff.outputs.diff-count }}
+    description: ''
 runs:
   using: composite
   steps:
@@ -14,6 +16,6 @@ runs:
         TARGET_BRANCH: ${{ github.base_ref }}
       run: |
         git fetch origin ${TARGET_BRANCH}
-        count=`git diff origin/${TARGET_BRANCH} HEAD --name-only | wc -l`
+        count=`git diff origin/${TARGET_BRANCH} HEAD --name-only --relative=${{ inputs.subdir }} | wc -l`
         echo "::set-output name=diff-count::$(echo $count)"
       shell: bash
