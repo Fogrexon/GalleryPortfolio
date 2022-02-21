@@ -1,8 +1,8 @@
-name: lint
+name: check
 on:
   - pull_request
 jobs:
-  lint:
+  check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -14,9 +14,9 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 14.x
-      - name: test
+      - name: check
         if: steps.diff.outputs.diff-count > 0
         working-directory: ./
         run: | 
           npm install
-          npm check
+          npm run check
