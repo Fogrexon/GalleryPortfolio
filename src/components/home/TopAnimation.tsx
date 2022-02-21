@@ -3,24 +3,7 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { PerspectiveCamera } from '@react-three/drei';
 import { useSpring, animated, SpringValue } from '@react-spring/three';
 import style from './main.module.scss'
-
-
-
-const AlphaPlane: VFC<{position: SpringValue<number[]>}> = ({position}) => {
-  const meshRef = useRef(null);
-
-  useFrame(() => {
-    meshRef.current.rotation.z += Math.PI / 450;
-  })
-
-  return (
-    // @ts-ignore
-    <animated.mesh ref={meshRef} position={position}>
-      <planeGeometry args={[2, 2]} />
-      <meshBasicMaterial color="pink" />
-    </animated.mesh>
-  )
-};
+import { FirstAnim } from './FirstAnim';
 
 const useMove = () => {
   const [state, setState] = useState({x: 0, y: 0})
@@ -37,7 +20,7 @@ const useMove = () => {
 
 export const TopAnimation = () => {
   const [pageState, setPageState] = useState({
-    first: false,
+    first: true,
     mode: 'About'
   })
   const [canvasSize, setCanvasSize] = useState({width: 1000, height: 1000});
@@ -70,7 +53,7 @@ export const TopAnimation = () => {
       <Canvas>
         {/* @ts-ignore */}
       <PerspectiveCamera makeDefault radius={(canvasSize.width + canvasSize.height) / 4} aspect={canvasSize.width / canvasSize.height} fov={45} position={position} lookAt={[0, 0, 0]} />
-        <AlphaPlane position={facePos} />
+        <FirstAnim first={pageState.first} update={setPageState} />
       </Canvas>
     </main>
   )
