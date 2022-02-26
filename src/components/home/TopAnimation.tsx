@@ -1,12 +1,12 @@
-import React, { useEffect, useRef, useState, VFC } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
+import React, { useEffect, useState } from 'react';
+import { Canvas } from '@react-three/fiber';
 import { PerspectiveCamera } from '@react-three/drei';
-import { useSpring, animated, SpringValue } from '@react-spring/three';
 import style from './main.module.scss'
 import { FirstAnim } from './FirstAnim';
+import { Monolith } from './Monolith';
 
 const useMove = () => {
-  const [state, setState] = useState({x: 0, y: 0})
+  const [state, setState] = useState({x: 500, y: 500})
 
   const handleMouseMove = e => {
     e.persist()
@@ -18,7 +18,7 @@ const useMove = () => {
   }
 }
 
-export const TopAnimation = () => {
+export function TopAnimation() {
   const [pageState, setPageState] = useState({
     first: true,
     mode: 'About'
@@ -43,17 +43,16 @@ export const TopAnimation = () => {
   }, [])
 
   useEffect(() => {
-    setPosition([state.x / canvasSize.width - 0.5, - state.y / canvasSize.height + 0.5, 10]);
+    setPosition([(state.x / canvasSize.width - 0.5) * 0.1, (- state.y / canvasSize.height + 0.5) * 0.1, 10]);
   }, [state, canvasSize]);
-
-  const { position: facePos } = useSpring({from: {position: [0, 0, 20]}, to: {position:  [0, 0, 0]}});
 
   return (
     <main className={style.main} onMouseMove={handleMouseMove}>
       <Canvas>
         {/* @ts-ignore */}
-      <PerspectiveCamera makeDefault radius={(canvasSize.width + canvasSize.height) / 4} aspect={canvasSize.width / canvasSize.height} fov={45} position={position} lookAt={[0, 0, 0]} />
+        <PerspectiveCamera makeDefault radius={(canvasSize.width + canvasSize.height) / 4} aspect={canvasSize.width / canvasSize.height} fov={45} position={position} lookAt={[0, 0, 0]} />
         <FirstAnim first={pageState.first} update={setPageState} />
+        <Monolith first={pageState.first} update={setPageState} />
       </Canvas>
     </main>
   )

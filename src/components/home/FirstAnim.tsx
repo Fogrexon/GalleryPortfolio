@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-props-no-spreading */
+/* eslint-disable react/function-component-definition */
 import { animated, SpringValue, useSpring } from "@react-spring/three";
 import { useFrame } from "@react-three/fiber";
 import { VFC, useRef, useEffect } from "react";
@@ -22,16 +24,13 @@ const RotatePlane: VFC<{position: SpringValue<number[]>, seed: number} & {[key: 
   );
 };
 
-const IconPlane: VFC<{position: SpringValue<number[]>, onClick: () => void} & {[key: string]: any}> = ({position, onClick, ...rest}) => {
-
-  return (
+const IconPlane: VFC<{position: SpringValue<number[]>, onClick: () => void} & {[key: string]: any}> = ({position, onClick, ...rest}) => (
     // @ts-ignore
     <animated.mesh onClick={onClick} position={position} {...rest}>
       <planeGeometry args={[0.9, 0.9]} />
       <meshBasicMaterial color="white" />
     </animated.mesh>
-  );
-}
+  )
 
 export const FirstAnim: VFC<{first: boolean, update: (props: any) => void}> = ({first, update}) => {
 
@@ -58,7 +57,7 @@ export const FirstAnim: VFC<{first: boolean, update: (props: any) => void}> = ({
       position: [0, 0, 20],
     },
     to: {
-      position: first ? [0, 0, 1] : [0, 0, 20]
+      position: first ? [0, 0, 2] : [0, 0, 20]
     }
   })
 
