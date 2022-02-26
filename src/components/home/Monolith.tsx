@@ -84,9 +84,9 @@ export const Monolith: VFC<{first: boolean, update: (props: any) => void}> = ({f
           <AlphaPlane opacity={alphaProps.opacity} map={selection < 0 ? null : textures[selection]} position={[0, -4, 0.5]} onClick={() => setSelection(-1)} timescale={0.8} />
         </>
       ): ''}
-      <Plane {...aboutProps} onClick={() => setSelection(0)} />
-      <Plane {...galleryProps} onClick={() => setSelection(1)} />
-      <Plane {...blogProps} onClick={() => setSelection(2)} />
+      <Plane {...aboutProps} onClick={() => selection >= 0 || setSelection(0)} />
+      <Plane {...galleryProps} onClick={() => selection >= 0 || setSelection(1)} />
+      <Plane {...blogProps} onClick={() => selection >= 0 || setSelection(2)} />
     </animated.group>
   )
 }

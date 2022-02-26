@@ -1,6 +1,8 @@
 import { TopAnimation } from "../components/home/TopAnimation";
 
 
-const Home = () => <TopAnimation />;
+function Home() {
+  return <TopAnimation />
+}
 
 export default Home;
