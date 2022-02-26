@@ -1,22 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { PerspectiveCamera } from '@react-three/drei';
 import style from './main.module.scss'
 import { FirstAnim } from './FirstAnim';
 import { Monolith } from './Monolith';
-
-const useMove = () => {
-  const [state, setState] = useState({x: 500, y: 500})
-
-  const handleMouseMove = e => {
-    e.persist()
-    setState(_state => ({..._state, x: e.clientX, y: e.clientY}))
-  }
-  return {
-    state,
-    handleMouseMove,
-  }
-}
 
 export function TopAnimation() {
   const [pageState, setPageState] = useState({
@@ -24,8 +11,6 @@ export function TopAnimation() {
     mode: 'About'
   })
   const [canvasSize, setCanvasSize] = useState({width: 1000, height: 1000});
-  const {state, handleMouseMove} = useMove();
-  const [position, setPosition] = useState([0, 0, 10]);
 
   useEffect(() => {
     if(!window) return;
@@ -42,17 +27,19 @@ export function TopAnimation() {
     }
   }, [])
 
-  useEffect(() => {
-    setPosition([(state.x / canvasSize.width - 0.5) * 0.1, (- state.y / canvasSize.height + 0.5) * 0.1, 10]);
-  }, [state, canvasSize]);
+  // useEffect(() => {
+  //   setPosition([(state.x / canvasSize.width - 0.5) * 0.1, (- state.y / canvasSize.height + 0.5) * 0.1, 10]);
+  // }, [state, canvasSize]);
 
   return (
-    <main className={style.main} onMouseMove={handleMouseMove}>
+    <main className={style.main}>
       <Canvas>
-        {/* @ts-ignore */}
-        <PerspectiveCamera makeDefault radius={(canvasSize.width + canvasSize.height) / 4} aspect={canvasSize.width / canvasSize.height} fov={45} position={position} lookAt={[0, 0, 0]} />
-        <FirstAnim first={pageState.first} update={setPageState} />
-        <Monolith first={pageState.first} update={setPageState} />
+        <Suspense fallback={null}>
+          {/* @ts-ignore */}
+          <PerspectiveCamera makeDefault radius={(canvasSize.width + canvasSize.height) / 4} aspect={canvasSize.width / canvasSize.height} fov={45} position={[0, 0, 10]} lookAt={[0, 0, 0]} />
+          <FirstAnim first={pageState.first} update={setPageState} />
+          <Monolith first={pageState.first} update={setPageState} />
+        </Suspense>
       </Canvas>
     </main>
   )
