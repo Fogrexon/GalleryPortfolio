@@ -1,18 +1,21 @@
-import React, { Suspense, useEffect, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { PerspectiveCamera } from '@react-three/drei';
+import { AxesHelper, PerspectiveCamera as ThreePerspectiveCamera } from 'three'
 import style from './main.module.scss'
 import { FirstAnim } from './FirstAnim';
-import { Monolith } from './Monolith';
+import { Stage } from './Stage';
+import { ErrorBoundary } from '../utils/ErrorBoundary';
 
-export function TopAnimation() {
+export const Inner = () => {
   const [pageState, setPageState] = useState({
     first: true,
     mode: 'About'
   })
   const [canvasSize, setCanvasSize] = useState({width: 1000, height: 1000});
+  const cameraRef = useRef<ThreePerspectiveCamera>(null)
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if(!window) return;
     const resizeHandler = () => {
       setCanvasSize({width: window.innerWidth, height: window.innerHeight})
@@ -27,20 +30,30 @@ export function TopAnimation() {
     }
   }, [])
 
-  // useEffect(() => {
-  //   setPosition([(state.x / canvasSize.width - 0.5) * 0.1, (- state.y / canvasSize.height + 0.5) * 0.1, 10]);
-  // }, [state, canvasSize]);
+  useEffect(() => {
+    if (cameraRef.current) {
+      cameraRef.current.position.set(-12, 6, 13)
+      cameraRef.current.lookAt(0, 0, 0)
+    }
+  }, [cameraRef.current]);
 
   return (
-    <main className={style.main}>
-      <Canvas>
-        <Suspense fallback={null}>
-          {/* @ts-ignore */}
-          <PerspectiveCamera makeDefault radius={(canvasSize.width + canvasSize.height) / 4} aspect={canvasSize.width / canvasSize.height} fov={45} position={[0, 0, 10]} lookAt={[0, 0, 0]} />
-          <FirstAnim first={pageState.first} update={setPageState} />
-          <Monolith first={pageState.first} update={setPageState} />
-        </Suspense>
-      </Canvas>
-    </main>
+    <>
+      {/* @ts-ignore */}
+      <PerspectiveCamera makeDefault ref={cameraRef} radius={(canvasSize.width + canvasSize.height) / 4} aspect={canvasSize.width / canvasSize.height} fov={39.6} />
+      <FirstAnim first={pageState.first} update={setPageState} />
+      <primitive object={new AxesHelper(10)} />
+      <Stage />
+    </>
   )
 }
+
+export const TopAnimation = () => (
+    <main className={style.main}>
+      <ErrorBoundary>
+      <Canvas>
+        <Inner />
+      </Canvas>
+      </ErrorBoundary>
+    </main>
+  )
