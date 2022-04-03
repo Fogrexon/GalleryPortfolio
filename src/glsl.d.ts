@@ -1,9 +1,9 @@
-declare module '*.vs' {
+declare module "*.vs" {
   const src: string;
   export default src;
 }
 
-declare module '*.fs' {
+declare module "*.fs" {
   const src: string;
   export default src;
 }
