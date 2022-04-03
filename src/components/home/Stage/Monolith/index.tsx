@@ -11,6 +11,8 @@ import {
 } from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import monolithSrc from "./monolith.glb";
+import ringSrc from "./ring.png";
+import ringDashedSrc from "./ring-dashed.png";
 import { EffectPlane, IconPlane, NamePlane } from "./Planes";
 
 interface MonolithProps {
@@ -65,6 +67,7 @@ export const Monolith: VFC<MonolithProps> = ({
         rotation={[0, -Math.PI * 0.5, 0]}
         to={{ scale: !visible ? [0.5, 0.5, 0.5] : [2.5, 2.5, 2.5] }}
         speed={-1}
+        textureSrc={ringSrc.src}
       />
       <EffectPlane
         visible={visible}
@@ -72,6 +75,7 @@ export const Monolith: VFC<MonolithProps> = ({
         rotation={[0, -Math.PI * 0.5, 0]}
         to={{ scale: !visible ? [1, 1, 1] : [3, 3, 3] }}
         speed={1}
+        textureSrc={ringDashedSrc.src}
       />
       <IconPlane
         visible={visible}

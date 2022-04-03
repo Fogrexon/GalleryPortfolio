@@ -1,4 +1,5 @@
 import { animated, useSpring } from "@react-spring/three";
+import { useTexture } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useRef, VFC } from "react";
 import { Color, Mesh } from "three";
@@ -9,11 +10,13 @@ const wait = (time: number) =>
   });
 
 export const EffectPlane: VFC<
-  { to: Record<string, any>; visible: boolean; speed: number } & Record<
-    string,
-    any
-  >
-> = ({ to, speed, ...props }) => {
+  {
+    to: Record<string, any>;
+    visible: boolean;
+    speed: number;
+    textureSrc: string;
+  } & Record<string, any>
+> = ({ to, speed, textureSrc, ...props }) => {
   const anim = useSpring({
     to,
     config: {
@@ -28,11 +31,17 @@ export const EffectPlane: VFC<
     if (!ref.current) return;
     ref.current.rotation.z += Math.PI * 0.2 * delta * speed;
   });
+  const tex = useTexture(textureSrc);
   return (
     // eslint-disable-next-line react/jsx-props-no-spreading
     <animated.mesh ref={ref} {...props} {...anim}>
       <planeBufferGeometry />
-      <meshBasicMaterial transparent color={new Color(1, 0, 0)} opacity={0.5} />
+      <meshBasicMaterial
+        map={tex}
+        transparent
+        color={new Color(1, 0, 0)}
+        opacity={0.5}
+      />
     </animated.mesh>
   );
 };
