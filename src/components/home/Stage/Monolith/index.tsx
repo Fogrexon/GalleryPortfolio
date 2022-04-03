@@ -21,7 +21,7 @@ interface MonolithProps {
   textureSrc: string;
   textSrc: string;
   iconSrc: string;
-  onClick: () => void
+  onClick: () => void;
 }
 export const Monolith: VFC<MonolithProps> = ({
   position,
@@ -29,7 +29,7 @@ export const Monolith: VFC<MonolithProps> = ({
   textureSrc,
   textSrc,
   iconSrc,
-  onClick
+  onClick,
 }) => {
   const monolithOrigin = useLoader(GLTFLoader, monolithSrc);
   const monolithGeometry = useMemo<BufferGeometry | null>(

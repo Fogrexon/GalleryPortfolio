@@ -1,4 +1,11 @@
-import React, { createContext, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import React, {
+  createContext,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { Canvas } from "@react-three/fiber";
 import { PerspectiveCamera } from "@react-three/drei";
 import {
@@ -13,7 +20,9 @@ import { ErrorBoundary } from "../utils/ErrorBoundary";
 import { PostProcessing } from "./Stage/PostProcessing";
 import { Splash } from "./Splash";
 
-export const RouterContext = createContext<{router: null | NextRouter}>({router: null});
+export const RouterContext = createContext<{ router: null | NextRouter }>({
+  router: null,
+});
 
 export const Inner = () => {
   const [canvasSize, setCanvasSize] = useState({ width: 1000, height: 1000 });
@@ -68,10 +77,9 @@ export const Inner = () => {
   );
 };
 
-
 export const TopAnimation = () => {
-  const router = useRouter()
-  const passContextValue = useMemo(() => ({ router }), [router.pathname])
+  const router = useRouter();
+  const passContextValue = useMemo(() => ({ router }), [router.pathname]);
   return (
     <main className={style.main}>
       <ErrorBoundary>
@@ -85,4 +93,4 @@ export const TopAnimation = () => {
       </ErrorBoundary>
     </main>
   );
-}
+};

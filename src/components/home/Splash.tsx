@@ -30,14 +30,14 @@ void main() {
 export const SplashInner: VFC<Record<string, any>> = ({ ...rest }) => {
   const tex = useTexture(splashSrc.src);
   const t = useRef(0);
-  const matRef = useRef<ShaderMaterial>(null)
+  const matRef = useRef<ShaderMaterial>(null);
 
   useFrame((_, delta) => {
     if (!matRef.current) return;
     t.current += delta;
     // console.clear()
     matRef.current.uniforms.progress.value = Math.max(0.0, t.current - 2.0);
-  })
+  });
   return (
     <mesh {...rest}>
       <planeBufferGeometry />

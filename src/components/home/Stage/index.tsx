@@ -20,7 +20,13 @@ import { RouterContext } from "../TopAnimation";
 
 export const Models: VFC<{}> = () => {
   const floorOrigin = useLoader(GLTFLoader, floorSrc);
-  const floor = useMemo(() => floorOrigin.scene.children.length > 0 ? floorOrigin.scene.children[0].clone() : null, [floorOrigin]);
+  const floor = useMemo(
+    () =>
+      floorOrigin.scene.children.length > 0
+        ? floorOrigin.scene.children[0].clone()
+        : null,
+    [floorOrigin]
+  );
   const window = useLoader(GLTFLoader, windowSrc);
   const lightRef = useRef<SpotLight>(null);
 
@@ -31,10 +37,9 @@ export const Models: VFC<{}> = () => {
       lightRef.current.castShadow = true;
     }
   }, []);
-  useFrame(() => {
-  })
+  useFrame(() => {});
 
-  const { router } = useContext(RouterContext)
+  const { router } = useContext(RouterContext);
   return (
     <>
       <Monolith
@@ -44,7 +49,7 @@ export const Models: VFC<{}> = () => {
         textureSrc={galleryMonolithSrc.src}
         textSrc={galleryTextSrc.src}
         iconSrc={galleryIconSrc.src}
-        onClick={() => router.push('/gallery')}
+        onClick={() => router.push("/gallery")}
       />
       <Monolith
         key="about"
@@ -53,7 +58,7 @@ export const Models: VFC<{}> = () => {
         textureSrc={aboutMonolithSrc.src}
         textSrc={aboutTextSrc.src}
         iconSrc={aboutIconSrc.src}
-        onClick={() => router.push('/about')}
+        onClick={() => router.push("/about")}
       />
       <Monolith
         key="blog"
@@ -62,7 +67,7 @@ export const Models: VFC<{}> = () => {
         textureSrc={blogMonolithSrc.src}
         textSrc={blogTextSrc.src}
         iconSrc={blogIconSrc.src}
-        onClick={() => router.push('/blog')}
+        onClick={() => router.push("/blog")}
       />
       <primitive object={floor} receiveShadow castShadow />
       <primitive object={window.scene} />
