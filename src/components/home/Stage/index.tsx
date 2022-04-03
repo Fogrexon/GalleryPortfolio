@@ -7,6 +7,10 @@ import floorSrc from "./floor.glb";
 import windowSrc from "./light.glb";
 import { Monolith } from "./Monolith";
 
+import galleryMonolithSrc from "./galleryMonolith.png";
+import aboutMonolithSrc from "./aboutMonolith.png";
+import blogMonolithSrc from "./blogMonolith.png";
+
 export const Models: VFC<{}> = () => {
   const floor = useLoader(GLTFLoader, floorSrc);
   const window = useLoader(GLTFLoader, windowSrc);
@@ -22,16 +26,22 @@ export const Models: VFC<{}> = () => {
   return (
     <>
       <Monolith
+        key="gallery"
         position={useMemo(() => new Vector3(-1.2955, 1.3, -4.2001), [])}
         rotation={useMemo(() => new Euler(0, 0, -0.21), [])}
+        textureSrc={galleryMonolithSrc.src}
       />
       <Monolith
+        key="about"
         position={useMemo(() => new Vector3(3.794, 1.669, -3.1085), [])}
         rotation={useMemo(() => new Euler(-0.15, 0.28, 0.31), [])}
+        textureSrc={aboutMonolithSrc.src}
       />
       <Monolith
+        key="blog"
         position={useMemo(() => new Vector3(2.8337, 0.33942, 2.6606), [])}
         rotation={useMemo(() => new Euler(0.3, 0.34, -1.06), [])}
+        textureSrc={blogMonolithSrc.src}
       />
       <primitive object={floor.scene.children[0]} receiveShadow castShadow />
       <primitive object={window.scene} />

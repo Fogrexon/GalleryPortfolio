@@ -38,7 +38,6 @@ export const Inner = () => {
       <PerspectiveCamera
         makeDefault
         ref={cameraRef}
-        radius={(canvasSize.width + canvasSize.height) / 4}
         aspect={canvasSize.width / canvasSize.height}
         fov={39.6}
       />
