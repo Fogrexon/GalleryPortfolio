@@ -1,15 +1,21 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { PerspectiveCamera } from "@react-three/drei";
-import { PerspectiveCamera as ThreePerspectiveCamera } from "three";
+import {
+  AxesHelper,
+  Group,
+  PerspectiveCamera as ThreePerspectiveCamera,
+} from "three";
 import style from "./main.module.scss";
 import { Stage } from "./Stage";
 import { ErrorBoundary } from "../utils/ErrorBoundary";
 import { PostProcessing } from "./Stage/PostProcessing";
+import { Splash } from "./Splash";
 
 export const Inner = () => {
   const [canvasSize, setCanvasSize] = useState({ width: 1000, height: 1000 });
   const cameraRef = useRef<ThreePerspectiveCamera>(null);
+  const groupRef = useRef<Group>(null);
 
   useLayoutEffect(() => {
     if (!window) return;
@@ -30,19 +36,30 @@ export const Inner = () => {
     if (cameraRef.current) {
       cameraRef.current.position.set(-12, 4, 13);
       cameraRef.current.lookAt(0, 2, 0);
+      if (groupRef.current) {
+        groupRef.current.position.copy(cameraRef.current.position);
+        groupRef.current.rotation.copy(cameraRef.current.rotation);
+      }
     }
   }, [cameraRef.current]);
 
   return (
     <>
-      {/* @ts-ignore */}
       <PerspectiveCamera
         makeDefault
         ref={cameraRef}
         aspect={canvasSize.width / canvasSize.height}
         fov={39.6}
       />
-      {/* <primitive object={new AxesHelper(10)} /> */}
+      <group ref={groupRef} name="splash">
+        <primitive position={[0, 0, -11]} object={new AxesHelper(10)} />
+        <Splash
+          position={[0, 0, -1]}
+          scale={[2, 2, 2]}
+          rotation={[0, 0, 0]}
+          onClick={() => null}
+        />
+      </group>
       <Stage />
     </>
   );

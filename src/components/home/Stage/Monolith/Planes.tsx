@@ -46,7 +46,10 @@ export const EffectPlane: VFC<
   );
 };
 export const IconPlane: VFC<
-{ to: Record<string, any>; visible: boolean, textureSrc: string } & Record<string, any>
+  { to: Record<string, any>; visible: boolean; textureSrc: string } & Record<
+    string,
+    any
+  >
 > = ({ to, textureSrc, ...props }) => {
   const anim = useSpring({
     to: async (next) => {
@@ -71,7 +74,10 @@ export const IconPlane: VFC<
   );
 };
 export const NamePlane: VFC<
-  { to: Record<string, any>; visible: boolean, textureSrc: string } & Record<string, any>
+  { to: Record<string, any>; visible: boolean; textureSrc: string } & Record<
+    string,
+    any
+  >
 > = ({ to, textureSrc, ...props }) => {
   const anim = useSpring({
     to: async (next) => {
@@ -86,7 +92,7 @@ export const NamePlane: VFC<
       velocity: 0.032,
     },
   });
-  const tex = useTexture(textureSrc)
+  const tex = useTexture(textureSrc);
   tex.generateMipmaps = false;
   return (
     // eslint-disable-next-line react/jsx-props-no-spreading

@@ -27,7 +27,7 @@ export const Monolith: VFC<MonolithProps> = ({
   rotation,
   textureSrc,
   textSrc,
-  iconSrc
+  iconSrc,
 }) => {
   const monolithOrigin = useLoader(GLTFLoader, monolithSrc);
   const monolithGeometry = useMemo<BufferGeometry | null>(
@@ -79,12 +79,16 @@ export const Monolith: VFC<MonolithProps> = ({
         visible={visible}
         position={[-1, 0, 0]}
         rotation={[0, -Math.PI * 0.5, 0]}
-        to={{ scale: !visible ? [0, 0, 0] : [2, 2, 2] }} textureSrc={iconSrc}      />
+        to={{ scale: !visible ? [0, 0, 0] : [2, 2, 2] }}
+        textureSrc={iconSrc}
+      />
       <NamePlane
         visible={visible}
         position={[-1, 0, 0]}
         rotation={[0, -Math.PI * 0.5, 0]}
-        to={{ scale: !visible ? [0, 0, 0] : [4, 1, 1] }} textureSrc={textSrc}      />
+        to={{ scale: !visible ? [0, 0, 0] : [4, 1, 1] }}
+        textureSrc={textSrc}
+      />
       <mesh
         material={monolithMaterial}
         geometry={monolithGeometry}
