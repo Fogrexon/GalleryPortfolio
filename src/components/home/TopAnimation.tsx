@@ -5,6 +5,7 @@ import { PerspectiveCamera as ThreePerspectiveCamera } from "three";
 import style from "./main.module.scss";
 import { Stage } from "./Stage";
 import { ErrorBoundary } from "../utils/ErrorBoundary";
+import { PostProcessing } from "./Stage/PostProcessing";
 
 export const Inner = () => {
   const [canvasSize, setCanvasSize] = useState({ width: 1000, height: 1000 });
@@ -53,6 +54,7 @@ export const TopAnimation = () => (
       <Canvas shadows>
         <color attach="background" args={[0, 0, 0]} />
         <Inner />
+        <PostProcessing />
       </Canvas>
     </ErrorBoundary>
   </main>

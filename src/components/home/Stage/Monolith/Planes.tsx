@@ -40,14 +40,14 @@ export const EffectPlane: VFC<
         map={tex}
         transparent
         color={new Color(1, 0, 0)}
-        opacity={0.5}
+        opacity={0.3}
       />
     </animated.mesh>
   );
 };
 export const IconPlane: VFC<
-  { to: Record<string, any>; visible: boolean } & Record<string, any>
-> = ({ to, ...props }) => {
+{ to: Record<string, any>; visible: boolean, textureSrc: string } & Record<string, any>
+> = ({ to, textureSrc, ...props }) => {
   const anim = useSpring({
     to: async (next) => {
       await next({ scale: to.scale });
@@ -60,17 +60,19 @@ export const IconPlane: VFC<
       velocity: 0.032,
     },
   });
+  const tex = useTexture(textureSrc);
+  tex.generateMipmaps = false;
   return (
     // eslint-disable-next-line react/jsx-props-no-spreading
     <animated.mesh {...props} {...anim}>
       <planeBufferGeometry />
-      <meshBasicMaterial transparent color={new Color(1, 0, 0)} opacity={0.5} />
+      <meshBasicMaterial map={tex} color={new Color(1, 0, 0)} alphaTest={0.3} />
     </animated.mesh>
   );
 };
 export const NamePlane: VFC<
-  { to: Record<string, any>; visible: boolean } & Record<string, any>
-> = ({ to, ...props }) => {
+  { to: Record<string, any>; visible: boolean, textureSrc: string } & Record<string, any>
+> = ({ to, textureSrc, ...props }) => {
   const anim = useSpring({
     to: async (next) => {
       await next({ scale: [0, 0, 0] });
@@ -84,11 +86,13 @@ export const NamePlane: VFC<
       velocity: 0.032,
     },
   });
+  const tex = useTexture(textureSrc)
+  tex.generateMipmaps = false;
   return (
     // eslint-disable-next-line react/jsx-props-no-spreading
     <animated.mesh {...props} {...anim}>
       <planeBufferGeometry />
-      <meshBasicMaterial transparent color={new Color(1, 0, 0)} opacity={0.5} />
+      <meshBasicMaterial map={tex} color={new Color(1, 0, 0)} alphaTest={0.3} />
     </animated.mesh>
   );
 };

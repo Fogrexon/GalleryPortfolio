@@ -7,9 +7,15 @@ import floorSrc from "./floor.glb";
 import windowSrc from "./light.glb";
 import { Monolith } from "./Monolith";
 
-import galleryMonolithSrc from "./galleryMonolith.png";
-import aboutMonolithSrc from "./aboutMonolith.png";
-import blogMonolithSrc from "./blogMonolith.png";
+import galleryMonolithSrc from "./imgs/galleryMonolith.png";
+import aboutMonolithSrc from "./imgs/aboutMonolith.png";
+import blogMonolithSrc from "./imgs/blogMonolith.png";
+import galleryTextSrc from "./imgs/galleryText.png";
+import aboutTextSrc from "./imgs/aboutText.png";
+import blogTextSrc from "./imgs/blogText.png";
+import galleryIconSrc from "./imgs/galleryIcon.png";
+import aboutIconSrc from "./imgs/aboutIcon.png";
+import blogIconSrc from "./imgs/blogIcon.png";
 
 export const Models: VFC<{}> = () => {
   const floor = useLoader(GLTFLoader, floorSrc);
@@ -29,20 +35,17 @@ export const Models: VFC<{}> = () => {
         key="gallery"
         position={useMemo(() => new Vector3(-1.2955, 1.3, -4.2001), [])}
         rotation={useMemo(() => new Euler(0, 0, -0.21), [])}
-        textureSrc={galleryMonolithSrc.src}
-      />
+        textureSrc={galleryMonolithSrc.src} textSrc={galleryTextSrc.src} iconSrc={galleryIconSrc.src}      />
       <Monolith
         key="about"
         position={useMemo(() => new Vector3(3.794, 1.669, -3.1085), [])}
         rotation={useMemo(() => new Euler(-0.15, 0.28, 0.31), [])}
-        textureSrc={aboutMonolithSrc.src}
-      />
+        textureSrc={aboutMonolithSrc.src} textSrc={aboutTextSrc.src} iconSrc={aboutIconSrc.src}      />
       <Monolith
         key="blog"
         position={useMemo(() => new Vector3(2.8337, 0.33942, 2.6606), [])}
         rotation={useMemo(() => new Euler(0.3, 0.34, -1.06), [])}
-        textureSrc={blogMonolithSrc.src}
-      />
+        textureSrc={blogMonolithSrc.src} textSrc={blogTextSrc.src} iconSrc={blogIconSrc.src}      />
       <primitive object={floor.scene.children[0]} receiveShadow castShadow />
       <primitive object={window.scene} />
       <spotLight
