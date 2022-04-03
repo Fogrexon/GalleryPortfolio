@@ -9,7 +9,6 @@ import React, {
 import { Canvas } from "@react-three/fiber";
 import { PerspectiveCamera } from "@react-three/drei";
 import {
-  AxesHelper,
   Group,
   PerspectiveCamera as ThreePerspectiveCamera,
 } from "three";
@@ -64,7 +63,6 @@ export const Inner = () => {
         fov={39.6}
       />
       <group ref={groupRef} name="splash">
-        <primitive position={[0, 0, -11]} object={new AxesHelper(10)} />
         <Splash
           position={[0, 0, -1]}
           scale={[2, 2, 2]}
