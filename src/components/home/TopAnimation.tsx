@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import React, { createContext, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { PerspectiveCamera } from "@react-three/drei";
 import {
@@ -6,11 +6,14 @@ import {
   Group,
   PerspectiveCamera as ThreePerspectiveCamera,
 } from "three";
+import { NextRouter, useRouter } from "next/router";
 import style from "./main.module.scss";
 import { Stage } from "./Stage";
 import { ErrorBoundary } from "../utils/ErrorBoundary";
 import { PostProcessing } from "./Stage/PostProcessing";
 import { Splash } from "./Splash";
+
+export const RouterContext = createContext<{router: null | NextRouter}>({router: null});
 
 export const Inner = () => {
   const [canvasSize, setCanvasSize] = useState({ width: 1000, height: 1000 });
@@ -65,14 +68,21 @@ export const Inner = () => {
   );
 };
 
-export const TopAnimation = () => (
-  <main className={style.main}>
-    <ErrorBoundary>
-      <Canvas shadows>
-        <color attach="background" args={[0, 0, 0]} />
-        <Inner />
-        <PostProcessing />
-      </Canvas>
-    </ErrorBoundary>
-  </main>
-);
+
+export const TopAnimation = () => {
+  const router = useRouter()
+  const passContextValue = useMemo(() => ({ router }), [router.pathname])
+  return (
+    <main className={style.main}>
+      <ErrorBoundary>
+        <Canvas shadows>
+          <RouterContext.Provider value={passContextValue}>
+            <color attach="background" args={[0, 0, 0]} />
+            <Inner />
+            <PostProcessing />
+          </RouterContext.Provider>
+        </Canvas>
+      </ErrorBoundary>
+    </main>
+  );
+}

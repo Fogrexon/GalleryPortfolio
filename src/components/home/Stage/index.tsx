@@ -1,6 +1,6 @@
-import { useLoader } from "@react-three/fiber";
+import { useFrame, useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { Suspense, useEffect, useMemo, useRef, VFC } from "react";
+import { Suspense, useContext, useEffect, useMemo, useRef, VFC } from "react";
 import { Euler, SpotLight, Vector3 } from "three";
 
 import floorSrc from "./floor.glb";
@@ -16,9 +16,11 @@ import blogTextSrc from "./imgs/blogText.png";
 import galleryIconSrc from "./imgs/galleryIcon.png";
 import aboutIconSrc from "./imgs/aboutIcon.png";
 import blogIconSrc from "./imgs/blogIcon.png";
+import { RouterContext } from "../TopAnimation";
 
 export const Models: VFC<{}> = () => {
-  const floor = useLoader(GLTFLoader, floorSrc);
+  const floorOrigin = useLoader(GLTFLoader, floorSrc);
+  const floor = useMemo(() => floorOrigin.scene.children.length > 0 ? floorOrigin.scene.children[0].clone() : null, [floorOrigin]);
   const window = useLoader(GLTFLoader, windowSrc);
   const lightRef = useRef<SpotLight>(null);
 
@@ -29,6 +31,10 @@ export const Models: VFC<{}> = () => {
       lightRef.current.castShadow = true;
     }
   }, []);
+  useFrame(() => {
+  })
+
+  const { router } = useContext(RouterContext)
   return (
     <>
       <Monolith
@@ -38,6 +44,7 @@ export const Models: VFC<{}> = () => {
         textureSrc={galleryMonolithSrc.src}
         textSrc={galleryTextSrc.src}
         iconSrc={galleryIconSrc.src}
+        onClick={() => router.push('/gallery')}
       />
       <Monolith
         key="about"
@@ -46,6 +53,7 @@ export const Models: VFC<{}> = () => {
         textureSrc={aboutMonolithSrc.src}
         textSrc={aboutTextSrc.src}
         iconSrc={aboutIconSrc.src}
+        onClick={() => router.push('/about')}
       />
       <Monolith
         key="blog"
@@ -54,8 +62,9 @@ export const Models: VFC<{}> = () => {
         textureSrc={blogMonolithSrc.src}
         textSrc={blogTextSrc.src}
         iconSrc={blogIconSrc.src}
+        onClick={() => router.push('/blog')}
       />
-      <primitive object={floor.scene.children[0]} receiveShadow castShadow />
+      <primitive object={floor} receiveShadow castShadow />
       <primitive object={window.scene} />
       <spotLight
         ref={lightRef}
