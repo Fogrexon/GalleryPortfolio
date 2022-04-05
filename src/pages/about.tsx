@@ -10,9 +10,19 @@ const About = () => (
     <Header title="About" />
     <Inner>
       <Section title="Name">Fogrex</Section>
-      <Section title="Info">大学3年 情報系</Section>
-      <Section title="Language">JS, UnityC#, GLSL, Python, Java etc...</Section>
-      <Section title="Interest">WebGL, Computer Graphics</Section>
+      <Section title="Infomation">Bachelor, Grade 4</Section>
+      <Section title="Languages">TypeScript, React, Vue, UnityC#, GLSL, Python, Java, etc...</Section>
+      <Section title="Interests">WebGL, xR, Computer Graphics, Procedural, Gadgets</Section>
+      <Section title="Hobbies">(Playing|Creating) game, Watching (anime|movies|TV series), (Buying | Using) gadgets</Section>
+      <Section title="Interns">
+        <ul>
+          <li>株式会社Junni (about 1 year)</li>
+          <li>株式会社サイバーエージェント (3 days)</li>
+          <li>株式会社アカツキ (3 days)</li>
+          <li>チームラボ株式会社 (2 weeks)</li>
+          <li>ピクシブ株式会社 (2 weeks)</li>
+        </ul>
+      </Section>
       <Section title="Links">
         <div className={style.icon_wrapper}>
           <a
