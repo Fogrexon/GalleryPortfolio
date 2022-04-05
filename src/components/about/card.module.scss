@@ -1,0 +1,58 @@
+.card {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 5px;
+  h3 {
+    width: 100%;
+    height: 100%;
+  }
+  div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .cardRing {
+    svg {
+      z-index: -10;
+      width: 100%;
+      position: absolute;
+    }
+    svg path {
+      will-change: auto;
+      stroke-width: 20px;
+      stroke-miterlimit: round;
+      transition: strokeDashoffset 850ms ease-in-out;
+    }
+    img, span {
+      display: block;
+      position:absolute;
+    }
+    img {
+      width: 70px;
+      height: 70px;
+    }
+  }
+  .cardHover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.3s;
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    padding: 2px;
+    h4 {
+      font-size: 30px;
+      margin: 0;
+    }
+  }
+  &:hover .cardHover {
+    opacity: 1;
+  }
+}
+
