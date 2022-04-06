@@ -3,56 +3,48 @@
     "name": "3DCG講習会",
     "tags": ["CG"],
     "link": "https://docs.google.com/presentation/d/1ssLJ1qHli1zbt5vGzrhsLkspxEbfibZPtNFpDZuf-Bw/edit?usp=sharing",
-    "image": "/gallery/egglikeman.png",
     "description": "サークル内で開いた3DCGの基礎を説明するスライド。"
   },
   {
     "name": "WebGLを用いた3DCGエンジンの作成",
     "tags": ["CG", "3D"],
     "link": "https://docs.google.com/presentation/d/1dWOtgwIs9PKw2V6njxPNVwjUKW38VjrQkXWsjzGIozk/edit?usp=sharing",
-    "image": "/gallery/egglikeman.png",
     "description": "WebGLのラッパーライブラリ(CGEngine)を製作した時の発表資料。"
   },
   {
     "name": "シェーダー講習会",
     "tags": ["CG", "Shader"],
     "link": "https://docs.google.com/presentation/d/1eMvsYhDWhbWWDHX2PQz4LGHa30WzD8NNWJQtsubUn0I/edit?usp=sharing",
-    "image": "/gallery/egglikeman.png",
     "description": "サークル内で開いたシェーダーの講習会の資料。"
   },
   {
     "name": "Tesseract",
     "tags": ["CG", "4D"],
     "link": "https://docs.google.com/presentation/d/1C3bwsqVPuQSR3CaAlcmydICBJIE0uQKX/edit?usp=sharing&ouid=100662697165040385792&rtpof=true&sd=true",
-    "image": "/gallery/egglikeman.png",
     "description": "4次元超立方体(Tesseract)を3次元空間でスライスするプログラムを書いたときのスライド。"
   },
   {
     "name": "Unityで木を作る話",
     "tags": ["Mesh", "Unity"],
     "link": "https://docs.google.com/presentation/d/1rsEYNR6cfxvtdS1IJ4MrfIx8h0JuDNtsvISHP9ULUA4/edit?usp=sharing",
-    "image": "/gallery/egglikeman.png",
     "description": "2021年のVisualizerのために作った木の生成プログラムの説明のスライド。"
   },
   {
     "name": "らん☆ぷろ～VR改造記～",
     "tags": ["VR", "Unity"],
     "link": "https://docs.google.com/presentation/d/16b5JAGDS8QzY5gcEZ0qaIYKfeyAn8jyGUNuoq4sCTB8/edit?usp=sharing",
-    "image": "/gallery/egglikeman.png",
     "description": "カップル破壊ゲームのVR版を製作したときのスライド。結局アプリ版の発表をしないままソースコードをどこかにやってしまった。"
   },
   {
     "name": "ブラウザでパストレした話",
     "tags": ["CG", "WASM", "PathTracing"],
     "link": "https://docs.google.com/presentation/d/1sIiKoY-QS_uymtbCPpyfA2svtTJ7ok_H/edit?usp=sharing&ouid=100662697165040385792&rtpof=true&sd=true",
-    "image": "/gallery/egglikeman.png",
     "description": "WebPathtracerを作った時のハッカソンのスライド"
   },
   {
     "name": "海を作ろう",
     "tags": ["Unity", "HLSL"],
     "link": "https://docs.google.com/presentation/d/1sIiKoY-QS_uymtbCPpyfA2svtTJ7ok_H/edit?usp=sharing&ouid=100662697165040385792&rtpof=true&sd=true",
-    "image": "/gallery/egglikeman.png",
     "description": "Shadertoyにあったシェーダーを読んだついでにUnity用に移植したときのスライド。"
   }
 ]
