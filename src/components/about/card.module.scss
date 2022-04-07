@@ -2,57 +2,66 @@
   position: relative;
   width: 150px;
   height: 150px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 0.2);
+
   h3 {
     width: 100%;
     height: 100%;
   }
+
   div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
   }
-  .cardRing {
+
+  .card_ring {
     svg {
+      position: absolute;
       z-index: -10;
       width: 100%;
-      position: absolute;
     }
+
     svg path {
-      will-change: auto;
-      stroke-width: 20px;
       stroke-miterlimit: round;
-      transition: strokeDashoffset 850ms ease-in-out;
+      stroke-width: 20px;
+      transition: strokedashoffset 850ms ease-in-out;
+      will-change: auto;
     }
-    img, span {
+
+    img,
+    span {
+      position: absolute;
       display: block;
-      position:absolute;
     }
+
     img {
       width: 70px;
       height: 70px;
     }
   }
-  .cardHover {
+
+  .card_hover {
     position: absolute;
     top: 0;
     left: 0;
-    transition: 0.3s;
-    color: white;
-    background: rgba(0, 0, 0, 0.7);
-    opacity: 0;
     padding: 2px;
+    color: white;
+    background: rgb(0 0 0 / 0.7);
+    opacity: 0;
+    transition: 0.3s;
+
     h4 {
-      font-size: 30px;
       margin: 0;
+      font-size: 30px;
     }
   }
-  &:hover .cardHover {
+
+  &:hover .card_hover {
     opacity: 1;
   }
 }
-

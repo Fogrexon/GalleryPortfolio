@@ -8,10 +8,7 @@ import React, {
 } from "react";
 import { Canvas } from "@react-three/fiber";
 import { PerspectiveCamera } from "@react-three/drei";
-import {
-  Group,
-  PerspectiveCamera as ThreePerspectiveCamera,
-} from "three";
+import { Group, PerspectiveCamera as ThreePerspectiveCamera } from "three";
 import { NextRouter, useRouter } from "next/router";
 import style from "./main.module.scss";
 import { Stage } from "./Stage";

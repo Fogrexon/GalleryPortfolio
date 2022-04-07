@@ -133,9 +133,7 @@ const GalleryWrapper: VFC = () => (
     </div>
 
     <SectionTitle>スライド</SectionTitle>
-    <p className={style.section_description}>
-      過去に発表したLT等のスライド
-    </p>
+    <p className={style.section_description}>過去に発表したLT等のスライド</p>
     <div className={style.wrapper} key="slide">
       {slides.map((entry) => (
         <GalleryItem item={entry} key={entry.name} />
