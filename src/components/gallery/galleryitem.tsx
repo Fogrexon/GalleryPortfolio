@@ -4,7 +4,7 @@ import { useRef, useState, VFC } from "react";
 import SectionTitle from "../utils/section";
 import style from "./galleryitem.module.scss";
 import works from "./works.json";
-import joins from "./joins.json";
+import slides from "./slides.json";
 import small from "./small.json";
 
 interface GalleryItemProps {
@@ -131,9 +131,11 @@ const GalleryWrapper: VFC = () => (
         <GalleryItem item={entry} key={entry.name} />
       ))}
     </div>
-    <SectionTitle>参加中のプロジェクト</SectionTitle>
-    <div className={style.wrapper} key="project">
-      {joins.map((entry) => (
+
+    <SectionTitle>スライド</SectionTitle>
+    <p className={style.section_description}>過去に発表したLT等のスライド</p>
+    <div className={style.wrapper} key="slide">
+      {slides.map((entry) => (
         <GalleryItem item={entry} key={entry.name} />
       ))}
     </div>

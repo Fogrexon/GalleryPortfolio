@@ -36,7 +36,7 @@ export const SplashInner: VFC<Record<string, any>> = ({ ...rest }) => {
     if (!matRef.current) return;
     t.current += delta;
     // console.clear()
-    matRef.current.uniforms.progress.value = Math.max(0.0, t.current - 2.0);
+    matRef.current.uniforms.progress.value = Math.max(0.0, t.current - 0.5);
   });
   return (
     <mesh {...rest}>
