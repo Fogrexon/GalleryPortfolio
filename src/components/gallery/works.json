@@ -107,5 +107,14 @@
     "sourcecode": "https://github.com/Fogrexon/WebPathtracer",
     "image": "/gallery/pathtracer.png",
     "description": "WebAssemblyでパストレをするライブラリ。モデルローダーも搭載している。ただしモデルローダーの出来はまだ制約が多くある。Web側の呼び出しインターフェースはなるべくWASMを意識しなくても使えるように工夫した。"
+  },
+  {
+    "name": "CPCTF Visualizer 2022",
+    "tags": ["3D", "three.js", "React-Pixi"],
+    "demo": "https://cpctf2022.github.io/Visualizer/",
+    "link": "https://trap.jp/post/1573/",
+    "sourcecode": "https://github.com/CPCTF2022/Visualizer",
+    "image": "/gallery/visualizer2022.webp",
+    "description": "サークルで新歓イベントとして開催しているCPCTFという大会用に用意したビジュアライザ。2022年のテーマは「Vaporwave」で、2000年前後のインターネットにあった混沌を再現している。"
   }
 ]
