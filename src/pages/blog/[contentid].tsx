@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 import Inner from "../../components/utils/inner";
-import Header from "../../components/utils/header";
+import Header from "../../components/utils/Header";
 
 import client from "../../components/blog/client";
 import BlogHeader from "../../components/blog/blogheader";

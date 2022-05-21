@@ -1,41 +1,59 @@
 @import "../../styles/style";
 
 .header {
-  width: 100%;
-  height: 64px;
-
-  div {
-    @include inner;
-
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    ul {
-      position: absolute;
-      right: 0;
-      padding: 0;
-      list-style: none;
-
-      li {
-        display: inline-block;
-        margin: 10px;
-      }
-    }
-
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  z-index: 9999;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .homeIcon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.7s ease;
+    transform-origin: 50% 60%;
+    transform: rotate(0deg);
+    margin: auto 0;
     svg {
+      width: 50px;
       height: 50px;
     }
   }
+  .homeIcon[data-hover=true] {
+    transform: rotate(210deg);
+  }
 
-  @include sp {
-    height: inherit;
+  .links {
+    transition: width 0.7s ease;
+    width: 0px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
 
-    div {
-      ul {
-        position: static;
+    ul {
+      padding-inline: 0;
+      display: flex;
+      align-items: center;
+      li {
+        transition: margin 0.7s ease;
+        margin: 0 0;
+        list-style: none;
+        font-size: 20px;
+      }
+      li[data-current=true] {
+        font-size: 30px;
+      }
+    }
+  }
+  .links[data-hover=true] {
+    width: 300px;
+    ul {
+      li {
+        margin: 0 20px;
       }
     }
   }

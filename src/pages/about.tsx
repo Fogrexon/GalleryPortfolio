@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import { FaTwitter, FaGithub, FaYoutube } from "react-icons/fa";
 import Inner from "../components/utils/inner";
-import Header from "../components/utils/header";
+import Header from "../components/utils/Header";
 import Section from "../components/about/section";
 import style from "../components/about/section.module.scss";
 import { Card } from "../components/about/card";
@@ -17,7 +17,7 @@ import processingIconSrc from "../components/about/icons/processing.png";
 
 const About = () => (
   <>
-    <Header title="About" />
+    <Header title="About" current="about" />
     <Inner>
       <Section title="Name">Fogrex</Section>
       <Section title="Infomation">Bachelor, Grade 4</Section>

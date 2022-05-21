@@ -1,5 +1,5 @@
 import Inner from "../components/utils/inner";
-import Header from "../components/utils/header";
+import Header from "../components/utils/Header";
 import Section from "../components/about/section";
 
 import client from "../components/blog/client";
@@ -8,7 +8,7 @@ import style from "../components/blog/blog.module.scss";
 
 const Blog = ({ blogData }) => (
   <>
-    <Header title="Blog" />
+    <Header title="Blog" current="blog" />
     <Inner>
       <Section title="Blog">
         {blogData.contents.map((blog) => (

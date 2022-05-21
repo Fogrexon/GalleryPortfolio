@@ -58,6 +58,7 @@ module.exports = {
     'import/no-unresolved': 'off',
     'import/prefer-default-export': 'off',
     'react/function-component-definition': [2, { "namedComponents": "arrow-function" }],
+    "react/require-default-props": "off",
   },
   overrides: [
     {
