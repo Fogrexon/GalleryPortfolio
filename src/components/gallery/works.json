@@ -116,5 +116,13 @@
     "sourcecode": "https://github.com/CPCTF2022/Visualizer",
     "image": "/gallery/visualizer2022.webp",
     "description": "サークルで新歓イベントとして開催しているCPCTFという大会用に用意したビジュアライザ。2022年のテーマは「Vaporwave」で、2000年前後のインターネットにあった混沌を再現している。"
+  },
+  {
+    "name": "GenshinAnalyzer",
+    "tags": ["OpenCV", "Deeplearning", "YOLOX"],
+    "link": "https://docs.google.com/presentation/d/1gPsy81MrXGim8yaCaTBMAL6k3mqAarJCh7C9eCMbqRE/edit?usp=sharing",
+    "sourcecode": "https://github.com/Fogrexon/GenshinAnalyzer",
+    "image": "/gallery/genshin.jpg",
+    "description": "原神の画面を解析してダメージ表示や敵の識別をするアプリケーション。フロントエンドはVite+Reactで作りました。"
   }
 ]
