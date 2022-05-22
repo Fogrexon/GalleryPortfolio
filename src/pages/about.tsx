@@ -1,24 +1,26 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
-import { FaTwitter, FaGithub, FaYoutube } from "react-icons/fa";
-import Inner from "../components/utils/inner";
+// import { FaTwitter, FaGithub, FaYoutube } from "react-icons/fa";
+// import Inner from "../components/utils/inner";
 import Header from "../components/utils/Header";
-import Section from "../components/about/section";
-import style from "../components/about/section.module.scss";
-import { Card } from "../components/about/card";
-import tsIconSrc from "../components/about/icons/ts.png";
-import javaIconSrc from "../components/about/icons/java.png";
-import pythonIconSrc from "../components/about/icons/python.png";
-import reactIconSrc from "../components/about/icons/react.png";
-import vueIconSrc from "../components/about/icons/vue.png";
-import unityIconSrc from "../components/about/icons/unity.png";
-import cIconSrc from "../components/about/icons/c.png";
-import cppIconSrc from "../components/about/icons/cpp.png";
-import processingIconSrc from "../components/about/icons/processing.png";
+// import Section from "../components/about/section";
+// import style from "../components/about/section.module.scss";
+// import { Card } from "../components/about/card";
+// import tsIconSrc from "../components/about/icons/ts.png";
+// import javaIconSrc from "../components/about/icons/java.png";
+// import pythonIconSrc from "../components/about/icons/python.png";
+// import reactIconSrc from "../components/about/icons/react.png";
+// import vueIconSrc from "../components/about/icons/vue.png";
+// import unityIconSrc from "../components/about/icons/unity.png";
+// import cIconSrc from "../components/about/icons/c.png";
+// import cppIconSrc from "../components/about/icons/cpp.png";
+// import processingIconSrc from "../components/about/icons/processing.png";
+import { AboutCanvas } from "../components/about/AboutCanvas";
 
 const About = () => (
   <>
     <Header title="About" current="about" />
-    <Inner>
+    <AboutCanvas />
+    {/* <Inner>
       <Section title="Name">Fogrex</Section>
       <Section title="Infomation">Bachelor, Grade 4</Section>
       <Section title="Languages">
@@ -128,7 +130,7 @@ const About = () => (
           </a>
         </div>
       </Section>
-    </Inner>
+    </Inner> */}
   </>
 );
 
