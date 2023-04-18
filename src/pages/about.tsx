@@ -14,13 +14,14 @@ import unityIconSrc from "../components/about/icons/unity.png";
 import cIconSrc from "../components/about/icons/c.png";
 import cppIconSrc from "../components/about/icons/cpp.png";
 import processingIconSrc from "../components/about/icons/processing.png";
+import ueIconSrc from "../components/about/icons/ue.svg";
 
 const About = () => (
   <>
     <Header title="About" />
     <Inner>
       <Section title="Name">Fogrex</Section>
-      <Section title="Infomation">Bachelor, Grade 4</Section>
+      <Section title="Infomation">Master, Grade 1</Section>
       <Section title="Languages">
         <div
           style={{
@@ -45,6 +46,9 @@ const About = () => (
           </Card>
           <Card level={2} src={vueIconSrc.src}>
             Vue
+          </Card>
+          <Card level={2} src={ueIconSrc.src}>
+            Unreal Engine
           </Card>
           <Card level={2} src={processingIconSrc.src}>
             Processing
@@ -74,6 +78,7 @@ const About = () => (
           <li>株式会社アカツキ (3 days, Game)</li>
           <li>チームラボ株式会社 (2 weeks, Frontend)</li>
           <li>ピクシブ株式会社 (2 weeks, Frontend)</li>
+          <li>株式会社MIXI (1 month, GameClient)</li>
         </ul>
       </Section>
       <Section title="Links">
