@@ -26,9 +26,10 @@ const Header = ({ title }) => (
           <li>
             <a href="/gallery">Gallery</a>
           </li>
+          {/* ブログをいったん閉鎖
           <li>
             <a href="/blog">Blog</a>
-          </li>
+          </li> */}
         </ul>
       </div>
     </header>
