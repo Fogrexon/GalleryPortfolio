@@ -1,0 +1,9 @@
+[
+  {
+    "name": "Using Rhythm Game to Train Rhythmic Motion in Sports",
+    "tags": ["Ski", "Unity", "Rhythmic Motion"],
+    "image": "/papers/sigasia2022.jpg",
+    "link": "https://dl.acm.org/doi/abs/10.1145/3550082.3564173",
+    "description": "リズムゲームを用いたスキーの訓練法の提案。SIGGRAPH Asia 2020で発表されたポスター論文。"
+  }
+]

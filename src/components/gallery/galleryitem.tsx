@@ -7,6 +7,7 @@ import works from "./works.json";
 import joins from "./joins.json";
 import slides from "./slides.json";
 import small from "./small.json";
+import papers from "./papers.json";
 
 interface GalleryItemProps {
   item: {
@@ -135,8 +136,16 @@ const GalleryWrapper: VFC = () => (
 
     <SectionTitle>取組中</SectionTitle>
     <p className={style.section_description}>現在進行中のプロジェクト。一部未完。</p>
-    <div className={style.wrapper} key="slide">
+    <div className={style.wrapper} key="join">
       {joins.map((entry) => (
+        <GalleryItem item={entry} key={entry.name} />
+      ))}
+    </div>
+
+    <SectionTitle>論文</SectionTitle>
+    <p className={style.section_description}>過去に発表した論文。</p>
+    <div className={style.wrapper} key="paper">
+      {papers.map((entry) => (
         <GalleryItem item={entry} key={entry.name} />
       ))}
     </div>
