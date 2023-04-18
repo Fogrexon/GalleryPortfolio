@@ -5,5 +5,18 @@
     "image": "/gallery/towerdefence.jpg",
     "link": "http://main.towerdefencegame3.towerdefence.trap.show/",
     "description": "タワーディフェンスとアクションを組み合わせたゲーム。ユニットの配置と自身の攻撃の二つを通して拠点を守っていく。製品化に向けて調整中。リンクにあるデモは爆音注意"
+  },
+  {
+    "name": "FastGameAPI",
+    "tags": ["Game", "Backend", "Nodejs", "MongoDB"],
+    "link": "https://fast-apid-emo-site.vercel.app/",
+    "description": "ハッカソンなどで難しい実装無しに使えるAPIを目指して開発中。API自体はほぼできており、認証基盤とデモ、ドキュメントの整備中。"
+  },
+  {
+    "name": "Typescriptでゲーム作りを学ぼう講習会",
+    "tags": ["Game", "TypeScript", "Nodejs"],
+    "link": "https://geode-durian-47c.notion.site/Typescript-084403ecc133445680c8dbaf7961726f",
+    "sourcecode": "https://github.com/Fogrexon/TypescriptGameLecture",
+    "description": "TypeScriptを使ってゲームの基本を学ぶ講習会。Webゲームの知見をサークルに残すとともにエンジンに頼らないゲーム制作を通してゲームの根幹を学ぶことを目指す。"
   }
 ]
