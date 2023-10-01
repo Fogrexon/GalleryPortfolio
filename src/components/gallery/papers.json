@@ -1,9 +1,16 @@
 [
   {
     "name": "Using Rhythm Game to Train Rhythmic Motion in Sports",
-    "tags": ["Ski", "Unity", "Rhythmic Motion"],
+    "tags": ["Ski", "Unity", "Rhythmic Motion", "Siggraph Asia 2022", "Poster"],
     "image": "/papers/sigasia2022.jpg",
     "link": "https://dl.acm.org/doi/abs/10.1145/3550082.3564173",
-    "description": "リズムゲームを用いたスキーの訓練法の提案。SIGGRAPH Asia 2020で発表されたポスター論文。"
+    "description": "リズムゲームを用いたスキーの訓練法の提案。SIGGRAPH Asia 2022で発表されたポスター論文。"
+  },
+  {
+    "name": "Volu-Me Fan: Turn Your Layered-fan into a Volumetric Display",
+    "tags": ["Projection", "3D Display", "Spatial User Interaction 2023", "Poster"],
+    "image": "/papers/sui23.png",
+    "link": "",
+    "description": "高速プロジェクターと多層の扇風機を使って3D ディスプレイを作った。Spatial User Interaction 2023で発表されたポスター論文。"
   }
 ]
