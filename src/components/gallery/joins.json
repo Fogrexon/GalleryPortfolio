@@ -1,12 +1,5 @@
 [
   {
-    "name": "TowerDefence(仮)",
-    "tags": ["Game", "Unity", "TopDownEngine"],
-    "image": "/gallery/towerdefence.jpg",
-    "link": "http://main.towerdefencegame3.towerdefence.trap.show/",
-    "description": "タワーディフェンスとアクションを組み合わせたゲーム。ユニットの配置と自身の攻撃の二つを通して拠点を守っていく。製品化に向けて調整中。リンクにあるデモは爆音注意"
-  },
-  {
     "name": "FastGameAPI",
     "tags": ["Game", "Backend", "Nodejs", "MongoDB"],
     "link": "https://fast-apid-emo-site.vercel.app/",
@@ -18,5 +11,11 @@
     "link": "https://geode-durian-47c.notion.site/Typescript-084403ecc133445680c8dbaf7961726f",
     "sourcecode": "https://github.com/Fogrexon/TypescriptGameLecture",
     "description": "TypeScriptを使ってゲームの基本を学ぶ講習会。Webゲームの知見をサークルに残すとともにエンジンに頼らないゲーム制作を通してゲームの根幹を学ぶことを目指す。"
+  },
+  {
+    "name": "Bubble Engine",
+    "tags": ["GameEngine", "TypeScript", "Nodejs"],
+    "sourcecode": "https://github.com/Fogrexon/bubble-engine",
+    "description": "Unityのようなコンポーネントベースのゲームオブジェクトを採用したTypeScript製のゲームエンジン。キーバインドやデータローダー等ゲームに必要な機能を統合している。"
   }
 ]

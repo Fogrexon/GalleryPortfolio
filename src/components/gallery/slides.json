@@ -61,5 +61,12 @@
     "image": "/slides/genshin.jpg",
     "link": "https://docs.google.com/presentation/d/1gPsy81MrXGim8yaCaTBMAL6k3mqAarJCh7C9eCMbqRE/edit?usp=sharing",
     "description": "原神の画面解析アプリケーションを作った時の発表スライド。使用した技術について詳しく説明した。"
+  },
+  {
+    "name": "はぐれ術師のひとり戦争 DevLog",
+    "tags": ["Game", "DevLog"],
+    "image": "/slides/hagurejutsushi-slide.png",
+    "link": "https://1drv.ms/p/s!AiCogCtK0XT3h6s0KYNWXjo7PiP1RA?e=iYLEe8",
+    "description": "「はぐれ術師のひとり戦争」の開発進捗をまとめたスライド。ゲームの紹介やゲームのプログラム構造、開発の進め方などを説明した。"
   }
 ]
