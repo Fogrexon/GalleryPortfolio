@@ -135,7 +135,9 @@ const GalleryWrapper: VFC = () => (
     </div>
 
     <SectionTitle>取組中</SectionTitle>
-    <p className={style.section_description}>現在進行中のプロジェクト。一部未完。</p>
+    <p className={style.section_description}>
+      現在進行中のプロジェクト。一部未完。
+    </p>
     <div className={style.wrapper} key="join">
       {joins.map((entry) => (
         <GalleryItem item={entry} key={entry.name} />
