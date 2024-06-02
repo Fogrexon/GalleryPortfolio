@@ -2,35 +2,18 @@ import {FC} from "react";
 import {Link} from "react-router-dom";
 import {faArrowUpRightFromSquare, faHouse, faImage, faInfoCircle,} from "@fortawesome/free-solid-svg-icons";
 import {MenuItem} from "./MenuItem.tsx";
-import {default as classNames} from "classnames";
 import {faGithub, faXTwitter} from "@fortawesome/free-brands-svg-icons";
 
-type SidebarProps = {
-  open: boolean;
-  toggleOpen: () => void;
-}
-
-export const Sidebar: FC<SidebarProps> = ({open, toggleOpen}) => {
-  const sidebarClass = classNames("fixed w-64 bg-base-100 h-full z-10 grow-0 transition-all ease-out", {
-    "-left-64": !open,
-    "left-0": open
-  }, "md:left-0")
-
-  const modalBgClass = classNames("block md:hidden fixed w-screen h-screen bg-gray-900 left-0 top-0 z-0 transition", {
-    "pointer-events-none": !open,
-    "opacity-0": !open,
-    "poitner-events-auto": open,
-    "opacity-30": open,
-  })
+export const Sidebar: FC = () => {
 
   return (
     <>
-      <div className={modalBgClass} onClick={toggleOpen}/>
-      <div className={sidebarClass}>
+      <label htmlFor="main-sidebar" aria-label="close siderbar" className="drawer-overlay"></label>
+      <div className="h-full bg-base-200">
         <div className="navbar">
-          <Link to={"/"}>Fogrex's Page</Link>
+          Fogrex's Page
         </div>
-        <ul className="menu mx-auto my-3 bg-base-200 w-56 rounded-box py-3">
+        <ul className="menu my-3 bg-base-200 w-56 py-3">
           <li>
             <a>Pages</a>
             <ul>
