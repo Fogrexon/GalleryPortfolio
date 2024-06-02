@@ -1,0 +1,136 @@
+[
+  {
+    "name": "Fogrex-SNS",
+    "tags": ["JavaScript", "Nodejs"],
+    "link": "",
+    "sourcecode": "https://github.com/Fogrexon/Fogrex-SNS",
+    "image": "/gallery/fogrex-sns.png",
+    "description": "サーバーとフロントの勉強のために作ったツイッターもどき。マテリアルデザインのライブラリを使ってフロントを作り、Node.jsで認証等もきちんと実装した。DBにはMongoDBを使った。サーバーにお金がかかるので現在は停止中。"
+  },
+  {
+    "name": "OhokayamaAdventure",
+    "tags": ["JavaScript"],
+    "demo": "http://ohokayamaadventure.fogrex.trap.show/",
+    "sourcecode": "https://github.com/Fogrexon/HackathonTextAdventure",
+    "image": "/gallery/ohokayama.jpg",
+    "description": "ハッカソンで制作された。JSで作られているテキストで進むアドベンチャーゲーム。プログラム担当"
+  },
+  {
+    "name": "カップル破壊ゲーム-あいを破壊せよ-",
+    "tags": ["UnityC#", "VR"],
+    "link": "https://trap.jp/post/741/",
+    "demo": "https://drive.google.com/file/d/1F0eCc_ll-9RmhxOPa9hv0RHCLsgs7e9R/view",
+    "image": "/gallery/coupledestroy.png",
+    "description": "カップルを破壊するゲーム。サークル内でのハッカソンで制作。5人チーム。公開はしていないが、VR版がある。"
+  },
+  {
+    "name": "JankenSimulator",
+    "tags": ["UnityC#", "3D"],
+    "demo": "http://hackathon20_winter_09.hackathon20_winter_09.trap.show/",
+    "link": "https://trap.jp/post/1342/",
+    "image": "/gallery/jankensimulator.png",
+    "description": "HandSimulatorのオマージュ。マウスで前後移動。ホイールで上下移動。sが小指と薬指。E,Dが中指の第二関節と第三関節。RFが人差し指の第二関節と第三関節、Spaceが親指。難解なキー操作でたたいて被ってじゃんけんポンをするゲーム。ハッカソンで急ピッチで制作したのでHelpボタンが作られていない。自分はプログラム担当"
+  },
+  {
+    "name": "CGEngine",
+    "tags": ["WebGL", "TypeScript", "GLSL", "PBR"],
+    "link": "",
+    "demo": "https://fogrexon.github.io/CGEngine/examples/index.html",
+    "sourcecode": "https://github.com/titech-cpp/CGEngine",
+    "image": "/gallery/CGEngine.jpg",
+    "description": "授業の自由課題で作ったライブラリ。WebGLのラッパー。基本的なレンダリングから物理ベースレンダリングまで1から実装したもの。"
+  },
+  {
+    "name": "Newstater",
+    "tags": ["React", "Firebase"],
+    "demo": "https://news-6c0c6.web.app/",
+    "sourcecode": "https://github.com/yf1121/summer_hackathon_team1",
+    "image": "/gallery/newstater.jpg",
+    "description": "サマーハッカソンに参加して作った作品。共同制作者: yf1121。ニュースや新聞に特化したSNS。ニュースを聞いて、考えたことを思うままに書いてみよう。"
+  },
+  {
+    "name": "NEWTON",
+    "tags": ["UnityC#", "2D"],
+    "link": "/newton/index.html",
+    "sourcecode": "",
+    "image": "/gallery/newton.jpg",
+    "description": "サマーハッカソンに参加して作った作品。重力を操って弾を当てたり惑星同士を当てたりして点数を稼ぐゲーム。バックエンドチームが居てランキング機能がついていたが、現在は停止中。"
+  },
+  {
+    "name": "CPCTF Visualizer 2021",
+    "tags": ["UnityC#", "3D"],
+    "demo": "https://www.youtube.com/watch?v=vMCFuAQbgew",
+    "sourcecode": "https://github.com/CPCTF2021/Visualizer",
+    "link": "https://trap.jp/post/1384/",
+    "image": "/gallery/visualizer.jpg",
+    "description": "部内で開かれたCPCTFのスコアを視覚的に表示するためのビジュアライザ。UnityのWebGLビルドで作られた。3人で制作。自分は木やポストエフェクトなどを担当。現在はウェブサイトが閉じられているので配信の録画をLinkに張った。後半はバグが修正されて停止しなくなった。木を自動生成したり、惑星を自動生成するなど、なるべく人の手を加えずに生成できるように工夫したのもポイント(本番では事前に生成したものを並べている)"
+  },
+  {
+    "name": "Tesseract",
+    "tags": ["UnityC#", "4D"],
+    "link": "https://trap.jp/post/1346/",
+    "demo": "https://youtu.be/0_AK0S2yAbk",
+    "sourcecode": "https://github.com/Fogrexon/FourDimension",
+    "image": "/gallery/tesseract.png",
+    "description": "4次元の超立方体(正八胞体, Tesseract)を3次元空間でスライスして表示するエンジン。ギリギリゲームとしての体裁を保ったやつ。Windowsのみ。解説ブログ: https://trap.jp/post/1346/"
+  },
+  {
+    "name": "SpinningCat!",
+    "tags": ["UnityC#", "3D"],
+    "demo": "https://drive.google.com/file/d/1iCvDmgq1BA7gqQGNBriH8wRM1gAmNuFh/view?usp=sharing",
+    "sourcecode": "",
+    "image": "/gallery/SpinningCat.png",
+    "description": "猫をぶんなげるゲーム。15日でゲームを作る15jamの企画の延長で作ったもの。地形の自動生成やCinemachineやUniRxなどのライブラリの仕様、地形の自動生成やポスプロなどゲーム体験にこだわってみたくて作った実験作品でもある。linkからダウンロード出来ます(WIndowsのみ)"
+  },
+  {
+    "name": "Graphim",
+    "tags": ["Typescript", "Shader", "WebGL"],
+    "demo": "https://fogrexon.github.io/Graphim/examples/",
+    "link": "https://www.npmjs.com/package/graphim",
+    "sourcecode": "https://github.com/Fogrexon/Graphim",
+    "image": "/gallery/graphim.png",
+    "description": "シェーダーで画像にフィルターを掛けるライブラリ。npmでも公開している。ノードとしてシェーダー同士接続でき、自由にカスタムフィルターを掛けることができる。"
+  },
+  {
+    "name": "Imagraph",
+    "tags": ["Typescript", "Shader", "React"],
+    "link": "https://imagraph.vercel.app/",
+    "sourcecode": "https://github.com/Fogrexon/Graphim",
+    "image": "/gallery/imagraph.png",
+    "description": "Graphimを使ったサイト。シェーダーを使って画像にフィルターを掛ける。ノードエディターを使ってフィルターの自由度を拡張する予定。"
+  },
+  {
+    "name": "WebPathtracer",
+    "tags": ["PathTracer", "3D", "WebAssembly"],
+    "demo": "https://fogrexon.github.io/WebPathtracer/public/",
+    "link": "https://trap.jp/post/1463/",
+    "sourcecode": "https://github.com/Fogrexon/WebPathtracer",
+    "image": "/gallery/pathtracer.png",
+    "description": "WebAssemblyでパストレをするライブラリ。モデルローダーも搭載している。ただしモデルローダーの出来はまだ制約が多くある。Web側の呼び出しインターフェースはなるべくWASMを意識しなくても使えるように工夫した。"
+  },
+  {
+    "name": "CPCTF Visualizer 2022",
+    "tags": ["3D", "three.js", "React-Pixi"],
+    "demo": "https://cpctf2022.github.io/Visualizer/",
+    "link": "https://trap.jp/post/1573/",
+    "sourcecode": "https://github.com/CPCTF2022/Visualizer",
+    "image": "/gallery/visualizer2022.webp",
+    "description": "サークルで新歓イベントとして開催しているCPCTFという大会用に用意したビジュアライザ。2022年のテーマは「Vaporwave」で、2000年前後のインターネットにあった混沌を再現している。"
+  },
+  {
+    "name": "GenshinAnalyzer",
+    "tags": ["OpenCV", "Deeplearning", "YOLOX"],
+    "link": "https://docs.google.com/presentation/d/1gPsy81MrXGim8yaCaTBMAL6k3mqAarJCh7C9eCMbqRE/edit?usp=sharing",
+    "sourcecode": "https://github.com/Fogrexon/GenshinAnalyzer",
+    "image": "/gallery/genshin.jpg",
+    "description": "原神の画面を解析してダメージ表示や敵の識別をするアプリケーション。フロントエンドはVite+Reactで作りました。"
+  },
+  {
+    "name": "はぐれ術師のひとり戦争",
+    "tags": ["Game", "Unity", "TopDownEngine"],
+    "image": "/gallery/towerdefense.png",
+    "link": "https://trap.jp/post/1977/",
+    "demo": "https://youtu.be/3sYQmoOyjtk",
+    "description": "タワーディフェンスとアクションを組み合わせたゲーム。「ドール」の配置と自身の攻撃の二つを通して拠点を守っていく。ドールはステージクリアごとに解放されていき、その編成も戦略の一つとなる。"
+  }
+]
