@@ -26,9 +26,12 @@ export const Sidebar: FC = () => {
           <li>
             <a>External Links</a>
             <ul>
-              <li><Link to="/"><MenuItem faIcon={faXTwitter}>Twitter(X)</MenuItem></Link></li>
-              <li><Link to="/about"><MenuItem faIcon={faGithub}>GitHub</MenuItem></Link></li>
-              <li><Link to="/about"><MenuItem faIcon={faArrowUpRightFromSquare}>Blog</MenuItem></Link></li>
+              <li><Link to="https://x.com/home" target="_blank"><MenuItem
+                faIcon={faXTwitter}>Twitter(X)</MenuItem></Link></li>
+              <li><Link to="https://github.com/Fogrexon/" target="_blank"><MenuItem faIcon={faGithub}>GitHub</MenuItem></Link>
+              </li>
+              <li><Link to="https://fogrexon.notion.site/" target="_blank"><MenuItem
+                faIcon={faArrowUpRightFromSquare}>Blog</MenuItem></Link></li>
             </ul>
           </li>
         </ul>

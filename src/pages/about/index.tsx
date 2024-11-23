@@ -48,17 +48,18 @@ export const About: FC = () => {
       <BasicCard title={"External Links"} className="">
         <ul>
           <li>
-            <Link to={''} className="inline-block p-1"><FontAwesomeIcon icon={faGithub}/></Link>
+            <Link to={'https://github.com/Fogrexon/'} className="inline-block p-1"><FontAwesomeIcon
+              icon={faGithub}/></Link>
           </li>
           <li>
-            <Link to={''} className="inline-block p-1"><FontAwesomeIcon icon={faXTwitter}/></Link>
+            <Link to={'https://x.com/home'} className="inline-block p-1"><FontAwesomeIcon icon={faXTwitter}/></Link>
           </li>
           <li>
-            <Link to={''} className="inline-block p-1">traP Blog <FontAwesomeIcon
+            <Link to={'https://trap.jp/author/fogrex/'} className="inline-block p-1">traP Blog <FontAwesomeIcon
               icon={faArrowUpRightFromSquare}/></Link>
           </li>
           <li>
-            <Link to={''} className="inline-block p-1">Hatena Blog <FontAwesomeIcon
+            <Link to={'https://fogrexon.notion.site/'} className="inline-block p-1">Private Blog<FontAwesomeIcon
               icon={faArrowUpRightFromSquare}/></Link>
           </li>
         </ul>

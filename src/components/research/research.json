@@ -1,0 +1,56 @@
+[
+  {
+    "title": "Using Rhythm Game to Train Rhythmic Motion in Sports",
+    "authors": [
+      "Hidetaka Katsuyama",
+      "Erwin Wu",
+      "Hideki Koike"
+    ],
+    "conferenceAcronym": "SA '22 Posters",
+    "doi": "https://doi.org/10.1145/3550082.3564173",
+    "abstract": "Rhythm is important to improve skills in various sports. In this study, we create a rhythm game for ski training. It synchronizes music and turn timing, and has various types of feedback for training. We conducted a pilot study to verify the effectiveness through a comparison of three conditions."
+  },
+  {
+    "title": "Volu-Me Fan: Turn Your Layered-fan into a Volumetric Display",
+    "authors": [
+      "Hidetaka Katsuyama",
+      "Shio Miyafuji",
+      "Arisa Kohtani",
+      "Hideki Koike"
+    ],
+    "conferenceAcronym": "SUI '23",
+    "doi": "https://doi.org/10.1145/3607822.3618006",
+    "abstract": "This paper proposes Volu-Me, which displays multi-layer images by projecting onto a layered-fan rotating at high speed. In this system, each propeller part of the fan is projected by a high-speed projector. The rotation of the fan is measured by a sensor, and the projected image is generated in accordance with the rotation of the propeller section, which makes the system applicable to any fan. This system enables users to observe 3D layered images without wearing special equipment, and multiple users can observe at the same time. In this paper, we implement the prototype of the system and show the results of the projections, and discuss the potential and future extension of the system."
+  },
+  {
+    "title": "SkiTech: An Alpine Skiing and Snowboarding Dataset of 3D Body Pose, Sole Pressure, and Electromyography",
+    "authors": [
+      "Erwin Wu",
+      "Takashi Matsumoto",
+      "Chen-Chieh Liao",
+      "Ruofan Liu",
+      "Hidetaka Katsuyama",
+      "Yuki Inaba",
+      "Noriko Hakamada",
+      "Yusuke Yamamoto",
+      "Yusuke Ishige",
+      "Hideki Koike"
+    ],
+    "conferenceAcronym": "MMSports '23",
+    "doi": "https://doi.org/10.1145/3606038.3616151",
+    "abstract": "Effective analysis of skills requires high-quality, multi-modal datasets, especially in the field of artificial intelligence. However, creating such datasets for extreme sports, such as alpine skiing, can be challenging due to environmental constraints. Optical and wearable sensors may not perform optimally under diverse lighting, weather, and terrain conditions. To address these challenges, we present a comprehensive skiing/snowboarding dataset using a professional motor-based simulator. Using the realistic simulator, it is easy to obtain different types of data with a small domain gap between real-world data. Common data for skill analysis are collected, including camera images, 3D body pose, sole pressure, and leg electromyography, from athletes of different levels. Another key aspect is the comparison of cross-modal baselines, highlighting the versatility of the data across modalities. In addition, a real-world pilot test is conducted to assess the practical applicability and data robustness."
+  },
+  {
+    "title": "MOSion: Gaze Guidance with Motion-triggered Visual Cues by Mosaic Patterns",
+    "authors": [
+      "Arisa Kohtani",
+      "Shio Miyafuji",
+      "Keishiro Uragaki",
+      "Hidetaka Katsuyama",
+      "Hideki Koike"
+    ],
+    "conferenceAcronym": "CHI '24",
+    "doi": "https://doi.org/10.1145/3613904.3642577",
+    "abstract": "We propose a gaze-guiding method called MOSion to adjust the guiding strength reacted to observers’ motion based on a high-speed projector and the afterimage effect in the human vision system. Our method decomposes the target area into mosaic patterns to embed visual cues in the perceived images. The patterns can only direct the attention of the moving observers to the target area. The stopping observer can see the original image with little distortion because of light integration in the visual perception. The precomputation of the patterns provides the adaptive guiding effect without tracking devices and computational costs depending on the movements. The evaluation and the user study show that the mosaic decomposition enhances the perceived saliency with a few visual artifacts, especially in moving conditions. Our method embedded in white lights works in various situations such as planar posters, advertisements, and curved objects."
+  }
+]
