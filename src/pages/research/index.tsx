@@ -13,13 +13,20 @@ export const Research: FC = () => {
       <BasicCard title={"Research"} className={"col-span-1 sm:col-span-3"}>
         <div className="avatar h-full flex justify-center items-center">
           <div className="h-24 w-24 rounded">
-            <img src={realface}/>
+            <img alt={"Fogrex real face"} src={realface}/>
           </div>
         </div>
         <h3 className={"font-bold"}>Katsuyama Hidetaka</h3>
         <p>
-          東京科学大学（元東京工業大学）大学院在学中。専門はHuman Computer Interaction。
+          東京科学大学（元東京工業大学）大学院在学中。専門はHuman Computer
+          Interaction。学部時代はスキーの学習支援システムの研究、修士は高速プロジェクタを用いた動的プロジェクションマッピングについての研究を行っている。
         </p>
+        <h3 className={"font-bold"}>Research Topic</h3>
+        <div>
+          <span className="badge badge-outline m-1">Skill Acquisition</span>
+          <span className="badge badge-outline m-1">Dynamic Projection</span>
+          <span className="badge badge-outline m-1">Computer Graphics</span>
+        </div>
         <h3 className={"font-bold"}>External Links</h3>
         <ul>
           <li>

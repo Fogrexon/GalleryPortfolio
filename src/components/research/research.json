@@ -1,6 +1,7 @@
 [
   {
     "title": "Using Rhythm Game to Train Rhythmic Motion in Sports",
+    "firstAuthor": true,
     "authors": [
       "Hidetaka Katsuyama",
       "Erwin Wu",
@@ -12,6 +13,7 @@
   },
   {
     "title": "Volu-Me Fan: Turn Your Layered-fan into a Volumetric Display",
+    "firstAuthor": true,
     "authors": [
       "Hidetaka Katsuyama",
       "Shio Miyafuji",
@@ -24,6 +26,7 @@
   },
   {
     "title": "SkiTech: An Alpine Skiing and Snowboarding Dataset of 3D Body Pose, Sole Pressure, and Electromyography",
+    "firstAuthor": false,
     "authors": [
       "Erwin Wu",
       "Takashi Matsumoto",
@@ -42,6 +45,7 @@
   },
   {
     "title": "MOSion: Gaze Guidance with Motion-triggered Visual Cues by Mosaic Patterns",
+    "firstAuthor": true,
     "authors": [
       "Arisa Kohtani",
       "Shio Miyafuji",

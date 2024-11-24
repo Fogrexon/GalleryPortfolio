@@ -14,7 +14,7 @@ export const About: FC = () => {
   return (
     <div className="w-full grid grid-cols-1 sm:grid-cols-3 gap-4">
       <BasicCard title={"Basic Information"} className="col-span-1 sm:col-span-3">
-        名前: Fogrex, 東京工業大学大学院在学中。専門はHuman Computer Interaction。Webフロント、ゲームクライアントエンジニア。
+        名前: Fogrex, 東京科学大学(元東京工業大学)大学院在学中。専門はHuman Computer Interaction。Webフロント、ゲームクライアントエンジニア。
       </BasicCard>
       <TimelineCard className={"col-span-1 sm:col-span-3"}/>
       <BasicCard title={"Interests"}>
@@ -30,11 +30,11 @@ export const About: FC = () => {
 
         </div>
       </BasicCard>
-      <SplitCard title={"Research"} className="col-span-1 row-span-1 sm:col-span-2 sm:row-span-1">
+      <BasicCard title={"Research"} className="col-span-1 row-span-1 sm:col-span-2 sm:row-span-1">
         Human Computer Interaction分野を専攻。学部時代はスキーシミュレータを用いたアルペンスキーの効果的な学習法について研究。
         修士では高速プロジェクタを用いた動的プロジェクションマッピングについて研究を行っている。
         <LinkButton to={"/research"}>詳細→</LinkButton>
-      </SplitCard>
+      </BasicCard>
       <ProgrammingTable className="col-span-1 sm:col-span-3"/>
       <HobbiesCard className="col-span-1 sm:col-span-3"/>
       <SplitCard title={"Icon"}
